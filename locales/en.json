@@ -1,0 +1,32 @@
+{
+	
+	"main_page":{
+		"home":"HOME",
+		"about":"ABOUT US",
+		"products":"PRODUCTS",
+		"contact":"CONTACT",
+		"slogan":"Local & Lmportrd Beverages",
+		"slogan_sub":"Delivery Solution",
+		"new_products":"New products",
+		"best_sellers":"Best Sellers",
+		"suggested_products":"Suggested Products",
+		"more":"More",
+		"blogs":"Blogs",
+		"faqs":"Faqs",
+		"terms_conditions":"Terms & Condition",
+		"privacy_policy":"Privacy Policy",
+		"help":"Help",
+		"material":"Material"
+	},
+	"contact":{
+		"name":"Name",
+		"e-mail":"E-mail",
+		"object":"Object",
+		"message":"Message",
+		"submit":"Submit",
+		"email-us":"Email us",
+		"reach-us":"Reach us",
+		"contact-us":"Contact Us",
+		"call-us":"Call us"
+	}
+}

@@ -1,0 +1,32 @@
+{
+	"main_page":{
+		"home":"الرئيسية",
+		"about":"حول",
+		"products":"المنتجات",
+		"contact":"اتصل",
+		"slogan":"المشروبات المحلية و Lmportrd",
+		"slogan_sub":"حل التسليم",
+		"new_products":"منتجات جديدة",
+		"best_sellers":"أفضل البائعين",
+		"suggested_products":"المنتجات المقترحة",
+		"more":"اكثر",
+		"blogs":"المدونات",
+		"faqs":"أسئلة وأجوبة",
+		"terms_conditions":"الشروط والأحكام",
+		"privacy_policy":"سياسة الخصوصية",
+		"help":"مساعدة",
+		"material":"مواد"
+
+	},
+	"contact":{
+		"name":"الاسم",
+		"e-mail":"الإيميل",
+		"object":"الهدف",
+		"message":"الرسالة",
+		"submit":"ارسال",
+		"email-us":"ارسل لنا عبر البريد الإلكتروني",
+		"reach-us":"تصل إلينا",
+		"contact-us":"اتصل بنا",
+		"call-us":"اتصل بنا"
+	}
+}
