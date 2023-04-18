@@ -33,12 +33,12 @@ export default {
     return {
       options: {
         loop: true,
-        perPage: 5,
+        perPage: 7,
         navigationEnabled: false,
         paginationEnabled: false,
         autoplayHoverPause: true,
-        autoplayTimeout: 3000,
-        autoplay: true,
+        autoplayTimeout:10000,
+        autoplay: false,
       },
     }
   },
