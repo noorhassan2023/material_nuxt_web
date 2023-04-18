@@ -5,7 +5,7 @@
         <div class="col-md-12">
           <div class="d-flex justify-content-between px-4">
             <h2 class="text1" style="align-items: center">{{ title }}</h2>
-            <a href="#" class="mt-1 task1">{{ $t('main_page.more') }}</a>
+			<NuxtLink :to="localePath('/products')" class="mt-1 task1">{{ $t('main_page.more') }}</NuxtLink>
           </div>
         </div>
       </div>

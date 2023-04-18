@@ -1,21 +1,21 @@
 {
 	"main_page":{
 		"home":"الرئيسية",
-		"about":"حول",
+		"about":"عن متيريال",
 		"products":"المنتجات",
-		"contact":"اتصل",
-		"slogan":"المشروبات المحلية و Lmportrd",
-		"slogan_sub":"حل التسليم",
+		"contact":"تواصل معنا",
+		"slogan":"Local & Imported Beverages",
+		"slogan_sub":"أفضل حلول توصيل",
 		"new_products":"منتجات جديدة",
-		"best_sellers":"أفضل البائعين",
+		"best_sellers":"الاكثر مبيعًا",
 		"suggested_products":"المنتجات المقترحة",
-		"more":"اكثر",
-		"blogs":"المدونات",
-		"faqs":"أسئلة وأجوبة",
+		"more":"المزيد",
+		"blogs":"المدونة",
+		"faqs":"اسئلة شائعة",
 		"terms_conditions":"الشروط والأحكام",
 		"privacy_policy":"سياسة الخصوصية",
-		"help":"مساعدة",
-		"material":"مواد"
+		"help":"المساعدة",
+		"material":"متيريال"
 
 	},
 	"contact":{
