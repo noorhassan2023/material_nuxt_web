@@ -1,10 +1,20 @@
 <template>
   <div class="main-content">
     <HomeSlider />
-    <HomeBanner :categories="categories"/>
-    <ProductSlider :title="$t('main_page.new_products')" :products="new_products" />
-    <ProductSlider :title="$t('main_page.best_sellers')" :products="best_sellers" />
-    <ProductSlider :title="$t('main_page.suggested_products')" :products="suggested_products" />
+    <HomeBanner :categories="categories" @filtered="filterProducts" />
+    <ProductSlider
+      :title="$t('main_page.suggested_products')"
+      :products="suggested_products"
+      :type="'suggested'"
+    />
+    <ProductSlider
+      :title="$t('main_page.new_products')"
+      :products="new_products"
+    />
+    <ProductSlider
+      :title="$t('main_page.best_sellers')"
+      :products="best_sellers"
+    />
   </div>
 </template>
 
@@ -13,13 +23,13 @@
 import HomeSlider from '@/components/home/slider.vue'
 import HomeBanner from '@/components/home/homeBanner.vue'
 import ProductSlider from '@/components/home/productSlider.vue'
-import HOME_API from "@/services/apis/home_api"
+import HOME_API from '@/services/apis/home_api'
 
 export default {
   components: { HomeSlider, ProductSlider, HomeBanner },
   data() {
     return {
-	  categories:[],	
+      categories: [],
       new_products: [],
       best_sellers: [],
       suggested_products: [],
@@ -27,19 +37,20 @@ export default {
   },
   methods: {
     async getData() {
-		   const res = await HOME_API.gethomeData();
-		   this.categories = res.responseData?.categories;
+      const all_data = await HOME_API.gethomeData()
+      this.categories = all_data.responseData.categories
+      this.suggested_products = this.categories[0].products
+      this.new_products = all_data.responseData.newlyArrivedProducts
+      this.best_sellers = all_data.responseData.bestSellerProducts
+    },
+    filterProducts(e) {
+      this.suggested_products = e
     },
   },
   created() {
     //this.mymethod();
     this.getData()
   },
-  watch: {
-    food: function (val) {
-        //Get food name by val(id)
-    }
-}
 }
 </script>
 

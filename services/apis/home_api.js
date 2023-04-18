@@ -1,11 +1,16 @@
 import apiAxios from '../apiAxios';
 
-const gethomeData = async () => {
-  const { data } = await apiAxios.get('product/dynamic-home-listing?iCategoryId=1');
-  return data;
-};
-
 export default {
-	gethomeData,
- 
-};
+		async gethomeData () {
+		const { data } = await apiAxios.get('product/latest-home-listing');
+		return data;
+		},
+
+		async getpages (slug) {
+			return await apiAxios.get('content-pages/'+slug);
+			
+		},
+
+
+}
+

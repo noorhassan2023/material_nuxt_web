@@ -15,6 +15,8 @@
 
 <script>
 
+import HOME_API from "@/services/apis/home_api"
+
 export default {
     data() {
 		return {
@@ -22,15 +24,17 @@ export default {
 		  pageName:'',	
 		}
    },
-  mounted() {
-      this.$axios.get('content-pages/privacy-policy')
-        .then((res) => {
-          console.log('result : ', res.data.responseData)
-			   this.pageName = res.data.responseData?.vPageName
-			   this.description = res.data.responseData?.txContent
-			   
-        })
+  methods: {
+    async getData() {
+		   const res = await HOME_API.getpages('privacy-policy');
+          this.pageName = res.data.responseData?.vPageName
+		  this.description = res.data.responseData?.txContent
+    },
   },
+  created() {
+      this.getData()
+  },
+ 
 
 };
 </script>
