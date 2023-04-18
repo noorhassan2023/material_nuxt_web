@@ -46,19 +46,22 @@
 
 <script>
 export default {
-  props: { title: String },
+  props: { 
+	title: String  , 
+    products : Array
+  },
    data() {
-    return {
-      options: {
-		    loop: true,
-			perPage:6,
-			navigationEnabled:false,
-			paginationEnabled:false,
-			autoplayHoverPause:true,
-			autoplayTimeout:3000,
-			autoplay:true
-      },
-	  sliders:[
+		return {
+		  options: {
+				loop: true,
+				perPage:5,
+				navigationEnabled:false,
+				paginationEnabled:false,
+				autoplayHoverPause:true,
+				autoplayTimeout:3000,
+				autoplay:true,
+		  },
+		  sliders:[
 		{"id":1,"img":"~/assets/img/water.png" ,"title":"Dr. Albert Sandoval"},
 		{"id":2,"img":"~/assets/img/water.png" ,"title":"Dr. Albert Sandoval"},
 		{"id":3,"img":"~/assets/img/water.png" ,"title":"Dr. Albert Sandoval"},
@@ -72,7 +75,7 @@ export default {
 
 		
 	  ]
-    }
-  },
+		}
+	  },
 };
 </script>

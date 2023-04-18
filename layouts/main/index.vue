@@ -12,8 +12,6 @@ import Footer from '@/components/layout/footer.vue'
 export default {
   name: 'Layout',
   components: { Header, Footer },
-  mounted(){
-    console.log("hello")
-  }
+  mounted() {},
 }
 </script>

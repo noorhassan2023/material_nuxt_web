@@ -7,13 +7,13 @@
         <div class="doctor text-center">
           <a href="doctor-details.html">
             <img
-              :src="item.img"
-              :alt="item. title"
+              :src="item.vImage"
+              :alt="item.vName"
               class="rounded-circle"
               width="150"
               height="150"
             />
-            <div class="doctors-name1">Pepsi</div>
+            <div class="doctors-name1">{{item.vName}}</div>
           </a>
         </div>
       </div>
@@ -27,32 +27,20 @@
 <script>
 export default {
   components: {},
-  data() {
-    return {
-      options: {
-		    loop: true,
-			perPage:5,
-			navigationEnabled:false,
-			paginationEnabled:false,
-			autoplayHoverPause:true,
-			autoplayTimeout:3000,
-			autoplay:true,
-      },categories:[
-		{"id":1,"img":"~/assets/img/water.png" ,"title":"Dr. Albert Sandoval"},
-		{"id":2,"img":"~/assets/img/water.png" ,"title":"Dr. Albert Sandoval"},
-		{"id":3,"img":"~/assets/img/water.png" ,"title":"Dr. Albert Sandoval"},
-		{"id":4,"img":"~/assets/img/water.png" ,"title":"Dr. Albert Sandoval"},
-		{"id":5,"img":"~/assets/img/water.png" ,"title":"Dr. Albert Sandoval"},
-		{"id":6,"img":"~/assets/img/water.png" ,"title":"Dr. Albert Sandoval"},
-		{"id":7,"img":"~/assets/img/water.png" ,"title":"Dr. Albert Sandoval"},
-		{"id":8,"img":"~/assets/img/water.png" ,"title":"Dr. Albert Sandoval"},
-		{"id":9,"img":"~/assets/img/water.png" ,"title":"Dr. Albert Sandoval"},
-		{"id":10,"img":"~/assets/img/water.png" ,"title":"Dr. Albert Sandoval"},
-
-		
-	  ]
-    }
-  },
+   props: { categories : Array},
+   data() {
+		return {
+		  options: {
+				loop: true,
+				perPage:5,
+				navigationEnabled:false,
+				paginationEnabled:false,
+				autoplayHoverPause:true,
+				autoplayTimeout:3000,
+				autoplay:true,
+		  },
+		}
+	  },
 }
 </script>
 

@@ -1,7 +1,11 @@
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  target: 'server',
+  target: 'static',
   ssr: true,
+
+  env: {
+    api_token: "Bearer 3711|8EF4wAHBiYaT6kayfcyDAgpL0FCAZkCsNSUFxUp4"
+  },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -18,16 +22,17 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-	"bootstrap/dist/css/bootstrap.min.css",
-	"~/assets/style/fontawesome/css/fontawesome.min.css",
+    "bootstrap/dist/css/bootstrap.min.css",
+    "@fortawesome/fontawesome-free/css/all.css",
     "~/assets/style/style.css",
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-	    {src: '~/plugins/vue-carousel.js',mode: 'client'},
-		{src: '~/plugins/custom.js'}
-   ],
+    { src: '~/plugins/vue-carousel.js', mode: 'client' },
+    { src: '~/plugins/custom.js' },
+	
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -43,38 +48,40 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
-	'@nuxtjs/i18n'
+    '@nuxtjs/i18n'
   ],
   i18n:
-	{
-            lazy: true,
-			langDir: 'locales/',
-			strategy:"prefix_except_default",
-			locales: [
-				{
-				  code: 'en',
-				  iso: 'en-US',
-				  file: 'en.json',
-				  name: 'English',
-				  dir: 'ltr',
-				},
-				{
-				  code: 'ar',
-				  iso: 'ar-SA',
-				  file: 'ar.json',
-				  name: 'Arabic',
-				  dir: 'rtl',
-				},
-			  ],vueI18n: {
-				fallbackLocale: 'en',
-			  },defaultLocale: 'en',
-    },
-  
+  {
+    lazy: true,
+    langDir: 'locales/',
+    strategy: "prefix_except_default",
+    locales: [
+      {
+        code: 'en',
+        iso: 'en-US',
+        file: 'en.json',
+        name: 'English',
+        dir: 'ltr',
+      },
+      {
+        code: 'ar',
+        iso: 'ar-SA',
+        file: 'ar.json',
+        name: 'Arabic',
+        dir: 'rtl',
+      },
+    ], vueI18n: {
+      fallbackLocale: 'en',
+    }, defaultLocale: 'en',
+  },
+
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: 'https://dev2.spaceo.in/project/top_materials_web/code/public/api/v2/',
+    baseURL: 'https://staging.materiel.sa/api/v3/',
+	//prefix: '/api',
+    credentials: true
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa

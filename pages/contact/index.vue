@@ -32,12 +32,7 @@
 						</div>
 						<div class="row">
 							<div class="col-md-12">
-								<div class="form-group row">
-									<label class=" col-form-label"> {{$t("contact.object")}}</label>
-									<div class="col-lg-12">
-										<input type="text" class="form-control">
-									</div>
-								</div>
+								
 								<div class="form-group row">
 									<label class=" col-form-label">{{$t("contact.message")}} </label>
 									<div class="col-lg-12">
