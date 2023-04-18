@@ -1,6 +1,7 @@
 import axios from 'axios';
 import CONFIG from './config';
 
+
 axios.defaults.baseURL = CONFIG.API_URL;
 
 const apiAxios = axios.create({
@@ -16,8 +17,8 @@ const apiAxios = axios.create({
 });
 
 apiAxios.interceptors.request.use((config) => {
-	config.headers.Authorization = 'Bearer 3711|8EF4wAHBiYaT6kayfcyDAgpL0FCAZkCsNSUFxUp4';
-	config.headers.Lang = 'en';
+  config.headers.Authorization = 'Bearer 3711|8EF4wAHBiYaT6kayfcyDAgpL0FCAZkCsNSUFxUp4';
+  config.headers.Lang = localStorage.getItem("locale");
   return config
 });
 

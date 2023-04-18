@@ -50,6 +50,17 @@ export default {
   created() {
     //this.mymethod();
     this.getData()
+
+    //setting locale
+    process.client ? localStorage.setItem('locale', this.$i18n.locale) : ''
+  },
+  watch: {
+    '$i18n.locale': {
+      handler: function (val) {
+        this.getData()
+      },
+      deep: true
+    },
   },
 }
 </script>
