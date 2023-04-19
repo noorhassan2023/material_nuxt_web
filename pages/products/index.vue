@@ -1,6 +1,6 @@
 <template>
 <section class="box">
-	     <ProductFilter />	
+	     <ProductFilter  @setSearch="handleSearch"/>	
 	      <Products :productList="productList" />
 	 
   </section>
@@ -19,13 +19,20 @@ export default {
      return {
 	  perPage :0,	
       productList: [],
+	  searchVal:'',
     }
   },
   methods:{
 	async getAllProducts(){
-		const res = await Product_API.getProducts(this.perPage,{});
+		const body = (this.searchVal.length > 0) ?{"vSerchString":this.searchVal} : '';
+		const res = await Product_API.getProducts(this.perPage,body);
 		this.productList = res.data.responseData?.productList;
+	},
+	async handleSearch(e){
+		 this.searchVal = e;
+		 this.getAllProducts();
 	}
+
   },created(){
 	this.getAllProducts();
   }
