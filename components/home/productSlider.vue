@@ -5,36 +5,36 @@
         <div class="col-md-12">
           <div class="d-flex justify-content-between px-4">
             <h2 class="text1" style="align-items: center">{{ title }}</h2>
-			<NuxtLink :to="localePath('/products')" class="mt-1 task1">{{ $t('main_page.more') }}</NuxtLink>
+            <NuxtLink :to="localePath('/products')" class="mt-1 task1">{{
+              $t('main_page.more')
+            }}</NuxtLink>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="owl-carousel text-center">
+    <div :class="$i18n.locale == 'en'? 'owl-carousel size text-left p-2': 'owl-carousel size text-right p-2'">
       <client-only>
         <carousel v-bind="options">
           <slide v-for="(product, i) in products" :key="i">
             <div class="shadow item1 card" data-toggle="modal" data-target="#Buy">
-              <div class="doctor text-center">
-                <a href="#" class="a-edit card-a">
+              <div class="doctor">
+                <a href="#" class="a-edit card-a p-2">
                   <img
                     :src="product.vProductImage"
                     :alt="product.vProductName"
-                    class=""
-                    width="150"
-                    height="150"
+                    class="mx-auto"
+                    width="100"
+                    height="100"
                   />
                   <hr />
-                  <div class="doctors-name">
+                  <div class="h6">
                     {{ product.vProductName }} {{ product.vProductUnit }}
                   </div>
-                  <div class="doctors-position1">Price</div>
-                  <div class="size">
+                  <div class="">Price</div>
+                  <div >
                     {{ product.dbOriginalProductPrice }}
-                    <span class="text-danger"
-                      >{{ product.dDiscountedProductPrice }} SAR</span
-                    >
+                    <span class="text-danger"> SAR</span>
                   </div>
                 </a>
               </div>
@@ -64,7 +64,7 @@ export default {
         autoplayHoverPause: true,
         autoplayTimeout: 10000,
         autoplay: false,
-      }
+      },
     }
   },
 }

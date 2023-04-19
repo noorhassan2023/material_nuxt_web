@@ -11,49 +11,57 @@
             </div>
           </div>
 
-          <div class="col-4 col-sm-4 col-lg-4 col-md-4">
+          <div class="col-4 col-sm-4 col-lg-4 col-md-4 mx-auto">
             <div class="footer-widget">
               <h4 class="footer-title">{{ $t('main_page.material') }}</h4>
               <ul class="footer-menu">
                 <li>
-                  <NuxtLink :to="localePath('/about-us')" class="nav-link">{{
-                    $t('main_page.about')
-                  }}</NuxtLink>
+                  <NuxtLink
+                    :to="localePath('/about-us')"
+                    class="nav-link p-0"
+                    >{{ $t('main_page.about') }}</NuxtLink
+                  >
                 </li>
                 <li>
-                  <NuxtLink :to="localePath('/products')" class="nav-link">{{
-                    $t('main_page.products')
-                  }}</NuxtLink>
+                  <NuxtLink
+                    :to="localePath('/products')"
+                    class="nav-link p-0"
+                    >{{ $t('main_page.products') }}</NuxtLink
+                  >
                 </li>
                 <li>
-                  <NuxtLink :to="localePath('/blogs')" class="nav-link">{{
+                  <NuxtLink :to="localePath('/blogs')" class="nav-link p-0">{{
                     $t('main_page.blogs')
                   }}</NuxtLink>
                 </li>
               </ul>
             </div>
           </div>
-          <div class="col-sm-4 col-4 col-lg-4 col-md-4">
+          <div class="col-sm-4 col-4 col-lg-4 col-md-4 mx-auto">
             <div class="footer-widget">
               <h4 class="footer-title">{{ $t('main_page.help') }}</h4>
               <ul class="footer-menu">
                 <li>
-                  <NuxtLink :to="localePath('/faqs')" class="nav-link">{{
+                  <NuxtLink :to="localePath('/faqs')" class="nav-link p-0">{{
                     $t('main_page.faqs')
                   }}</NuxtLink>
                 </li>
                 <li>
-                  <NuxtLink :to="localePath('/terms-conditions')" class="nav-link">{{
-                    $t('main_page.terms_conditions')
-                  }}</NuxtLink>
+                  <NuxtLink
+                    :to="localePath('/terms-conditions')"
+                    class="nav-link p-0"
+                    >{{ $t('main_page.terms_conditions') }}</NuxtLink
+                  >
                 </li>
                 <li>
-                  <NuxtLink :to="localePath('/privacy-policy')" class="nav-link">{{
-                    $t('main_page.privacy_policy')
-                  }}</NuxtLink>
+                  <NuxtLink
+                    :to="localePath('/privacy-policy')"
+                    class="nav-link p-0"
+                    >{{ $t('main_page.privacy_policy') }}</NuxtLink
+                  >
                 </li>
                 <li>
-                  <NuxtLink :to="localePath('/contact')" class="nav-link">{{
+                  <NuxtLink :to="localePath('/contact')" class="nav-link p-0">{{
                     $t('main_page.contact')
                   }}</NuxtLink>
                 </li>
