@@ -1,6 +1,5 @@
 @import 'https://fonts.googleapis.com/css?family=Poppins:400,500,600,700';
 
-
 body {
     color: #666;
     font-family: 'FONTSPRING DEMO - Loew';
@@ -138,7 +137,7 @@ textarea {
 
 .logo img {
     width: auto;
-    height: 50px
+
 }
 
 a:not([href]):not([tabindex]):focus,
@@ -236,7 +235,7 @@ a:not([href]):not([tabindex]):hover {
 
 
 .home-banner {
-   /* background-image: url(../img/bg.jpg);*/
+    /* background-image: url(../img/bg.jpg); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -809,7 +808,7 @@ label{
 }
 
 .account-box .cal-icon:after {
-   /* background: transparent url(../img/calander.png) no-repeat scroll 0 0;*/
+    /* background: transparent url(../img/calander.png) no-repeat scroll 0 0; */
     bottom: 0;
     content: "";
     display: block;
@@ -3256,3 +3255,4 @@ body.menu-opened {
         left: 43px ;
     }
 }
+

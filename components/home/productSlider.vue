@@ -15,7 +15,7 @@
       <client-only>
         <carousel v-bind="options">
           <slide v-for="(product, i) in products" :key="i">
-            <div class="shadow item1" data-toggle="modal" data-target="#Buy">
+            <div class="shadow item1 card" data-toggle="modal" data-target="#Buy">
               <div class="doctor text-center">
                 <a href="#" class="a-edit card-a">
                   <img

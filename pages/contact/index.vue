@@ -103,13 +103,15 @@ export default {
       txDescription: '',
     }
   },
-  methods: {
+  methods:{
     async SubmitContact() {
-      await CONTACT_API.postContactUs({
-        vName: this.vName,
-        vEmailId: this.vEmailId,
-        txDescription: this.txDescription,
-      })
+	try{	
+      const res = await CONTACT_API.postContactUs({vName: this.vName,
+								vEmailId: this.vEmailId,txDescription: this.txDescription})
+	      this.$toast.success(res.data.responseMessage)
+	    }catch (error) {
+          this.$toast.error('server error ...!')
+      }
     },
   },
 }

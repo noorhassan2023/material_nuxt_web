@@ -7,7 +7,7 @@
             <div class="col-md-2 float-left">
               <div class="logo">
                 <NuxtLink :to="localePath('/')" >
-                  ><img
+                  <img
                     alt="Logo"
                     src="~/assets/img/logo.png"
                     width="56"

@@ -1,7 +1,7 @@
 <template>
   <section class="section meet-doctors bg-white">
     <client-only>
-      <carousel v-bind="options">
+      <carousel v-bind="options" class="owl-carousel text-center">
         <slide v-for="item in categories" :key="item.id" >
           <template >
             <div class="item">
@@ -11,8 +11,8 @@
                     :src="item.vImage"
                     :alt="item.vName"
                     class="rounded-circle"
-                    width="150"
-                    height="150"
+                    width="100"
+                    height="100"
                   />
                   <div class="doctors-name1">{{ item.vName }}</div>
                 </a>
@@ -33,7 +33,7 @@ export default {
     return {
       options: {
         loop: true,
-        perPage: 7,
+        perPage: 9,
         navigationEnabled: false,
         paginationEnabled: false,
         autoplayHoverPause: true,
