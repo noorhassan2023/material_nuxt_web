@@ -34,29 +34,13 @@
 
     <div class="clearfix"></div>
     <br />
-    <div>
-      <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center">
-          <li class="page-item" @click="page > 0 ? (page = page + 1) : ''">
-            <a class="page-link">Next</a>
-          </li>
-          <li
-            class="page-item"
-            v-for="i in productList.totalPage"
-            :key="i"
-            @click="page = i"
-          >
-            <a class="page-link page-edit">{{ i }}</a>
-          </li>
-
-          <li
-            class="page-item"
-            @click="page <= productList.totalPage ? (page = page - 1) : ''"
-          >
-            <a class="page-link" href="#">Previous</a>
-          </li>
-        </ul>
-      </nav>
+    <div class="mx-auto row mt-2">
+      <b-pagination
+        v-model="page"
+        :total-rows="productList.totalRecord"
+        :per-page="productList.limit"
+        class="mx-auto"
+      ></b-pagination>
     </div>
   </div>
 </template>
