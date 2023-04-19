@@ -31,7 +31,7 @@ export default {
   plugins: [
     { src: '~/plugins/vue-carousel.js', mode: 'client' },
     { src: '~/plugins/custom.js' },
-	
+
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -48,8 +48,26 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
-    '@nuxtjs/i18n'
+    '@nuxtjs/i18n',
+    '@nuxtjs/toast',
   ],
+
+  //toast object instance
+  toast: {
+    position: 'top-center',
+    register: [ // Register custom toasts
+      {
+        name: 'my-error',
+        message: 'Oops...Something went wrong',
+        options: {
+          type: 'error'
+        }
+      }
+    ]
+  },
+
+  //i18n object instance
+
   i18n:
   {
     lazy: true,
@@ -80,7 +98,7 @@ export default {
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     baseURL: 'https://staging.materiel.sa/api/v3/',
-	//prefix: '/api',
+    //prefix: '/api',
     credentials: true
   },
 
