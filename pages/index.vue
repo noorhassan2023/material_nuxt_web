@@ -48,7 +48,6 @@ export default {
     },
   },
   created() {
-    //this.mymethod();
     this.getData()
 
     //setting locale

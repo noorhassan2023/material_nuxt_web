@@ -5,9 +5,10 @@
 			<h3 style="color: #012CDA; text-align: center; ">{{this.pageName}}</h3>
 		</div>
 	</section>
-	<section style="height: 100%;">
-
+	<section>
+            <div class="pt-5 pb-5 container">
 		      {{this.description | strippedContent }}
+		   </div>	  
 	</section>
 </div>	
 </template>

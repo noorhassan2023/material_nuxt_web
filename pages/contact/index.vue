@@ -10,13 +10,13 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6">
-					<form action="">
+					<form method="post" @submit.prevent="SubmitContact">
 						<div class="row">
 							<div class="col-xl-6">
 								<div class="form-group row">
 									<label class=" col-form-label">{{$t("contact.name")}}</label>
 									<div class="col-lg-12">
-										<input type="text" class="form-control">
+										<input type="text" v-model="vName" class="form-control">
 									</div>
 								</div>
 							</div>
@@ -24,7 +24,7 @@
 								<div class="form-group row">
 									<label class=" col-form-label">{{$t("contact.e-mail")}}</label>
 									<div class="col-lg-12">
-										<input type="email" class="form-control">
+										<input type="email" v-model="vEmailId" class="form-control">
 									</div>
 								</div>
 								
@@ -36,7 +36,7 @@
 								<div class="form-group row">
 									<label class=" col-form-label">{{$t("contact.message")}} </label>
 									<div class="col-lg-12">
-										<textarea rows="8" cols="5" class="form-control" ></textarea>
+										<textarea rows="8" cols="5" v-model="txDescription" class="form-control" ></textarea>
 									</div>
 								</div>
 							</div>
@@ -78,7 +78,24 @@
 
 
 <script>
+import CONTACT_API from '@/services/apis/contact_api'
 
 export default {
+	data() {
+		return {
+			vName: '',
+			vEmailId: '',
+			txDescription: '',
+		}
+	},
+	methods: {
+		async SubmitContact(){
+			await CONTACT_API.postContactUs({
+				vName: this.vName,
+				vEmailId: this.vEmailId,
+				txDescription: this.txDescription});
+		}
+
+	}
 };
 </script>

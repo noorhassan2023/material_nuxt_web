@@ -64,19 +64,7 @@ export default {
         autoplayHoverPause: true,
         autoplayTimeout: 10000,
         autoplay: false,
-      },
-      sliders: [
-        { id: 1, img: '~/assets/img/water.png', title: 'Dr. Albert Sandoval' },
-        { id: 2, img: '~/assets/img/water.png', title: 'Dr. Albert Sandoval' },
-        { id: 3, img: '~/assets/img/water.png', title: 'Dr. Albert Sandoval' },
-        { id: 4, img: '~/assets/img/water.png', title: 'Dr. Albert Sandoval' },
-        { id: 5, img: '~/assets/img/water.png', title: 'Dr. Albert Sandoval' },
-        { id: 6, img: '~/assets/img/water.png', title: 'Dr. Albert Sandoval' },
-        { id: 7, img: '~/assets/img/water.png', title: 'Dr. Albert Sandoval' },
-        { id: 8, img: '~/assets/img/water.png', title: 'Dr. Albert Sandoval' },
-        { id: 9, img: '~/assets/img/water.png', title: 'Dr. Albert Sandoval' },
-        { id: 10, img: '~/assets/img/water.png', title: 'Dr. Albert Sandoval' },
-      ],
+      }
     }
   },
 }
