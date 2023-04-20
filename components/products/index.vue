@@ -15,8 +15,8 @@
                 class="img-water"
                 :src="item.vProductImage"
                 :alt="item.vProductName"
-                width="150"
-                height="150"
+                width="100"
+                height="100"
               />
               <hr class="hr-margin" />
               <div class="doctor-edit doctors-name">
@@ -28,6 +28,8 @@
               </div>
             </a>
           </div>
+		      <div class="clearfix"></div><br/>
+
         </div>
       </div>
     </div>
