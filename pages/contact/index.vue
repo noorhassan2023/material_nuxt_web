@@ -8,7 +8,7 @@
       </div>
       <div class="container">
         <div class="row">
-          <div class="col-md-6">
+          <div :class="$i18n.locale == 'ar'? 'col-md-6 tow-rtl': 'col-md-6'">
             <form method="post" @submit.prevent="SubmitContact">
               <div class="row">
                 <div class="col-xl-6">
@@ -62,29 +62,29 @@
               </div>
             </form>
           </div>
-          <div class="location-div col-md-6">
-            <div class="padding-loc location-drive d-flex">
-              <i class="Location fa-solid fa-location-dot"></i>
-              <div>
-                <h4 class="location-h">{{ $t('contact.reach-us') }}</h4>
-                <p class="location-p">Almasthar Alshamali</p>
-              </div>
-            </div>
-            <div class="location-drive d-flex">
-              <i class="Location fa-solid fa-envelope"></i>
-              <div>
-                <h4 class="location-h">{{ $t('contact.email-us') }}</h4>
-                <p class="location-p">info@material.sa</p>
-              </div>
-            </div>
-            <div class="location-drive d-flex">
-              <i class="Location fa-solid fa-mobile-screen-button"></i>
-              <div>
-                <h4 class="location-h">{{ $t('contact.call-us') }}</h4>
-                <p class="location-p">+965865959659</p>
-              </div>
-            </div>
-          </div>
+          <div  :class="$i18n.locale == 'ar'? 'location-div col-md-6 tow-rtl': 'location-div col-md-6'" >
+					<div class="padding-loc location-drive d-flex">
+						<i class=" Location fa-solid fa-location-dot"></i>
+						<div :class="$i18n.locale == 'ar'? 'loc': ''" >
+							<h4 class="location-h" > {{ $t('contact.reach-us') }}</h4>
+							<p class="location-p"> الرياض,المعذر الشمالي</p>
+						</div>
+					</div>
+					<div class="location-drive d-flex">
+						<i class="Location fa-solid fa-envelope"></i>
+						<div class="loc">
+							<h4 class="location-h"> {{ $t('contact.email-us') }}</h4>
+							<p class="location-p"> info@material.sa</p>
+						</div>
+					</div>
+					<div class="location-drive d-flex padding-loc1">
+						<i class="Location fa-solid fa-mobile-screen-button"></i>
+						<div class="loc ">
+							<h4 class="location-h" > {{ $t('contact.contact-us') }}</h4>
+							<p class="location-p"> +965865959659</p>
+						</div>
+					</div>
+				</div>
         </div>
       </div>
     </section>

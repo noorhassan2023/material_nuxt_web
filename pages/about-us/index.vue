@@ -1,5 +1,5 @@
 <template>
-<section class="rectangle_home mt-4" style="height: 95%; background: white;">
+<section class="rectangle_home" style="height: 95%; background: white;">
         <div id="carouselExampleDark" class="carousel carousel-dark slide mx-auto"  data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"

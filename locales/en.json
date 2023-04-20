@@ -16,7 +16,9 @@
 		"terms_conditions":"Terms & Condition",
 		"privacy_policy":"Privacy Policy",
 		"help":"Help",
-		"material":"Material"
+		"material":"Material",
+		"price":"Price",
+		"sar":"SAR"
 	},
 	"contact":{
 		"name":"Name",

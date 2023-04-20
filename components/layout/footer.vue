@@ -1,6 +1,4 @@
 <template>
-
-
   <footer class="footer">
 		<div class="footer-top">
 			<div class="container">
@@ -33,19 +31,19 @@
 							<h4 class="footer-title">{{ $t('main_page.help') }}</h4>
 							<ul class="footer-menu">
 								<li>
-                  <NuxtLink :to="localePath('/faqs')" >{{$t('main_page.faqs')}}</NuxtLink>
-                </li>
-                <li>
-                  <NuxtLink :to="localePath('/terms-conditions')">{{ $t('main_page.terms_conditions') }}</NuxtLink
-                  >
-                </li>
-                <li>
-                  <NuxtLink :to="localePath('/privacy-policy')">{{ $t('main_page.privacy_policy') }}</NuxtLink
-                  >
-                </li>
-                <li>
-                  <NuxtLink :to="localePath('/contact')" >{{$t('main_page.contact')}}</NuxtLink>
-                </li>
+									<NuxtLink :to="localePath('/faqs')" >{{$t('main_page.faqs')}}</NuxtLink>
+									</li>
+									<li>
+									<NuxtLink :to="localePath('/terms-conditions')">{{ $t('main_page.terms_conditions') }}</NuxtLink
+									>
+									</li>
+									<li>
+									<NuxtLink :to="localePath('/privacy-policy')">{{ $t('main_page.privacy_policy') }}</NuxtLink
+									>
+									</li>
+									<li>
+									<NuxtLink :to="localePath('/contact')" >{{$t('main_page.contact')}}</NuxtLink>
+									</li>
 								
 							</ul>
 						</div>

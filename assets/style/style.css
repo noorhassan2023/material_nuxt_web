@@ -1039,6 +1039,12 @@ label{
 .card-header-edit{
     height: 50%;
 }
+.tow-rtl{
+    text-align: right !important
+}
+.loc{
+    margin-right: 15px;
+}
 
 .owl-theme .owl-controls {
     margin-top: 30px

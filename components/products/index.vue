@@ -22,9 +22,9 @@
               <div class="doctor-edit doctors-name">
                 {{ item.vProductName }} {{ item.vProductUnit }}
               </div>
-              <div class="doctors-position1">price</div>
+              <div class="doctors-position1">{{$t('main_page.price')}}</div>
               <div class="doctor-edit size pb-3" style="color: #012cda">
-                {{ item.dbOriginalProductPrice }} SAR
+                {{ item.dbOriginalProductPrice }} {{$t('main_page.sar')}}
               </div>
             </a>
           </div>

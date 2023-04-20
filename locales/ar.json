@@ -15,7 +15,9 @@
 		"terms_conditions":"الشروط والأحكام",
 		"privacy_policy":"سياسة الخصوصية",
 		"help":"المساعدة",
-		"material":"متيريال"
+		"material":"متيريال",
+		"price":"السعر",
+		"sar":"ريال"
 
 	},
 	"contact":{
@@ -24,8 +26,8 @@
 		"object":"الهدف",
 		"message":"الرسالة",
 		"submit":"ارسال",
-		"email-us":"ارسل لنا عبر البريد الإلكتروني",
-		"reach-us":"تصل إلينا",
+		"email-us":"الإيميل",
+		"reach-us":"المكتب الرئيسي",
 		"contact-us":"اتصل بنا",
 		"call-us":"اتصل بنا"
 	}

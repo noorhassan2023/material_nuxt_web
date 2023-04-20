@@ -29,7 +29,7 @@
                   />
                   <hr />
 				  <div class="doctors-name">{{ product.vProductName }}{{ product.vProductUnit }}</div>
-				  <div class="doctors-position1">price</div>
+				  <div class="doctors-position1">{{$t('main_page.price')}}</div>
 				  <div class="size"><s> {{product.dDiscountedProductPrice}} </s><span class="text-danger" style="font-size: 1rem;"> {{ product.dbOriginalProductPrice }}</span></div>
                 </a>
               </div>
