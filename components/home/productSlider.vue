@@ -5,7 +5,7 @@
         <div class="col-md-12">
           <div class="d-flex justify-content-between px-4">
             <h2 class="text1" style="align-items: center">{{ title }}</h2>
-            <NuxtLink :to="localePath('/products')" class="mt-1 task1">{{
+             <NuxtLink :to="localePath('/products')" class="mt-1 task1">{{
               $t('main_page.more')
             }}</NuxtLink>
           </div>
@@ -13,12 +13,12 @@
       </div>
     </div>
 
-    <div :class="$i18n.locale == 'en'? 'owl-carousel size text-left p-2': 'owl-carousel size text-right p-2'">
+    <div :class="$i18n.locale == 'en'? 'owl-carousel size text-left p-4': 'owl-carousel size text-right p-4'">
       <client-only>
         <carousel v-bind="options">
           <slide v-for="(product, i) in products" :key="i">
             <div class="shadow item1 card" data-toggle="modal" data-target="#Buy">
-              <div class="doctor">
+              <div class="card-body doctor text-center">
                 <a href="#" class="a-edit card-a p-2">
                   <img
                     :src="product.vProductImage"

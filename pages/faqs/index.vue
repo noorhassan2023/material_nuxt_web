@@ -14,7 +14,7 @@
 					<div class="faqs">
 						<div class="text-center">
 							<img src="assets/img/buyyyy.png" alt="" style="width: 25%;">
-							<h6>General</h6>
+							<h6><a href= "general">General</a></h6>
 						</div>
 					</div>
 				</div>
@@ -22,7 +22,7 @@
 					<div class="faqs">
 						<div class="text-center">
 							<img src="assets/img/text1.png" alt="" style="width: 25%;">
-							<h6>Delivery</h6>
+							<h6><a href= "delivery">Delivery</a></h6>
 						</div>
 					</div>
 				</div>
@@ -30,7 +30,7 @@
 					<div class="faqs">
 						<div class="text-center">
 							<img src="assets/img/text2.png" alt="" style="width: 25%;">
-							<h6>Order issues</h6>
+							<h6><a href= "order-issue">Order issues</a></h6>
 						</div>
 					</div>
 				</div>
@@ -38,7 +38,7 @@
 					<div class="faqs">
 						<div class="text-center">
 							<img src="assets/img/text.3.png" alt="" style="width: 25%;">
-							<h6>Products & Services</h6>
+							<h6><a href="product_and_services">Products & Services</a></h6>
 						</div>
 					</div>
 				</div>
@@ -49,7 +49,7 @@
 					<div class="faqs">
 						<div class="text-center">
 							<img src="assets/img/text4.png" alt="" style="width: 25%;">
-							<h6>Payments</h6>
+							<h6><a href="payments">Payments</a></h6>
 						</div>
 					</div>
 				</div>
@@ -57,7 +57,7 @@
 					<div class="faqs">
 						<div class="text-center">
 							<img src="assets/img/text5.png" alt="" style="width: 25%;">
-							<h6>Returns & Refunds</h6>
+							<h6><a href="return">Returns & Refunds</a></h6>
 						</div>
 					</div>
 				</div>
@@ -65,7 +65,7 @@
 					<div class="faqs">
 						<div class="text-center">
 							<img src="assets/img/text6.png" alt="" style="width: 25%;">
-							<h6>Technical issues</h6>
+							<h6><a href="technical-issue">Technical issues</a></h6>
 						</div>
 					</div>
 				</div>
@@ -79,8 +79,8 @@
 							<div class="faqs1">
 								<div class="text-center">
 									<i style="color: #0234D1;" class="fa-solid fa-envelope"></i>
-
-									<h6>Email us</h6>
+									<h6><a href='mailto:info@material.sa?subject=material&body=!'>Email us</a>
+</h6>
 								</div>
 							</div>
 						</div>
@@ -88,7 +88,7 @@
 							<div class="faqs1">
 								<div class="text-center">
 									<i style="color: #0234D1;" class="fa-solid fa-phone"></i>
-									<h6>Call us</h6>
+									<h6><a href= "tel:+965865959659">Call us</a></h6>
 								</div>
 							</div>
 						</div>
