@@ -5,7 +5,7 @@
         <div class="row footer-edit" >
           <div class="col-sm-4 col-lg-4 col-md-4">
             <div class="footer-widget">
-              <div class="about-clinic">
+              <div class="about-clinic text-center">
                 <img class="ml-auto" src="~/assets/img/Logo-2.png" alt="" style="width: 60%" />
               </div>
             </div>

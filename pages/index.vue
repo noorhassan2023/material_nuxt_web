@@ -28,13 +28,11 @@
 <script>
 import HomeSlider from '@/components/home/slider.vue'
 import HomeBanner from '@/components/home/homeBanner.vue'
-import ProductSlider from '@/components/home/productSlider.vue'
 import ProductSection from '@/components/home/productSection.vue'
-
 import HOME_API from '@/services/apis/home_api'
 
 export default {
-  components: { HomeSlider, ProductSlider, HomeBanner ,ProductSection },
+  components: { HomeSlider, HomeBanner ,ProductSection },
   data() {
     return {
       categories: [],
