@@ -1,5 +1,9 @@
 <template>
   <div class="main-content">
+    <v-skeleton-loader
+          v-bind="attrs"
+          type="card-avatar, article, actions"
+        ></v-skeleton-loader>
     <HomeSlider />
     <HomeBanner :categories="categories" @filtered="filterProducts" />
     <ProductSlider

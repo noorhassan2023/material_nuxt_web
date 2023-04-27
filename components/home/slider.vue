@@ -4,11 +4,11 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 col-md-6">
-          <div class="banner-content">
-            <h2 class="text-white">{{ $t('main_page.slogan') }}</h2>
+          <div :class="$i18n.locale == 'en'? 'text-left banner-content' : 'text-right banner-content'">
+            <h2 class="text-white ">{{ $t('main_page.slogan') }}</h2>
             <h2 class="text-white pb-3">{{ $t('main_page.slogan_sub') }}</h2>
 
-            <div class="row absolute">
+            <div class="row">
               <div class="col-md-6">
                 <div class="btn-test">
                   <div class="">

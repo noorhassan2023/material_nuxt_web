@@ -19,17 +19,31 @@
                 height="100"
               />
               <hr class="hr-margin" />
-              <div class="doctor-edit doctors-name">
+              <div
+                :class="
+                  $i18n.locale == 'en'
+                    ? 'doctor-edit doctors-name text-left'
+                    : 'doctor-edit doctors-name text-right'
+                "
+              >
                 {{ item.vProductName }} {{ item.vProductUnit }}
               </div>
-              <div class="doctors-position1">{{$t('main_page.price')}}</div>
-              <div class="doctor-edit size pb-3" style="color: #012cda">
-                {{ item.dbOriginalProductPrice }} {{$t('main_page.sar')}}
+              <div
+                :class="
+                  $i18n.locale == 'en'
+                    ? 'doctors-position1 text-left'
+                    : 'doctors-position1 text-right'
+                "
+              >
+                {{ $t('main_page.price') }}
+              </div>
+              <div :class="$i18n.locale == 'en' ? 'doctor-edit size pb-3 text-left' : 'doctor-edit size pb-3 text-right'" style="color: #012cda">
+                {{ item.dbOriginalProductPrice }} {{ $t('main_page.sar') }}
               </div>
             </a>
           </div>
-		      <div class="clearfix"></div><br/>
-
+          <div class="clearfix"></div>
+          <br />
         </div>
       </div>
     </div>

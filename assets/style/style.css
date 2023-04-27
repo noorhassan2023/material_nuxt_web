@@ -3036,11 +3036,11 @@ body.menu-opened {
 @media (max-width: 575.99px){
     .hero {
         width: 85% !important;
-        margin-top: -123px !important;
+        margin-top: 0px !important;
     }
     .absolute {
         position: absolute;
-        bottom: -293px !important;
+        bottom: -213px !important;
         left: 43px !important;
     }
 }
@@ -3140,7 +3140,7 @@ body.menu-opened {
     
     .hero {
         width: 100%;
-        margin-top: -72px;
+        margin-top: 42px;
     }
     .img-water{
         width: 70%;

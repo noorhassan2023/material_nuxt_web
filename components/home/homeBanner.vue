@@ -1,9 +1,8 @@
 <template>
   <section class="section meet-doctors bg-white">
     <client-only>
-      <carousel v-bind="options" class="owl-carousel text-center">
-        <slide v-for="item in categories" :key="item.id" >
-          <template >
+      <carousel v-bind="options" class="owl-carousel text-center" >
+        <slide v-for="item in categories" :key="item.id">
             <div class="item">
               <div class="doctor text-center">
                 <a @click="filterProduct(item)">
@@ -18,7 +17,6 @@
                 </a>
               </div>
             </div>
-          </template>
         </slide>
       </carousel>
     </client-only>
@@ -37,16 +35,17 @@ export default {
         navigationEnabled: false,
         paginationEnabled: false,
         autoplayHoverPause: true,
-        autoplayTimeout:10000,
+        autoplayTimeout: 10000,
         autoplay: false,
+        "per-page-custom":[[200,2],[780,8]]
       },
     }
   },
-  methods:{
-    filterProduct(category){
-      this.$emit("filtered", category.products)
-    }
-  }
+  methods: {
+    filterProduct(category) {
+      this.$emit('filtered', category.products)
+    },
+  },
 }
 </script>
 

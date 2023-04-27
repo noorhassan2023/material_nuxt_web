@@ -14,7 +14,7 @@
 					<div class="faqs">
 						<div class="text-center">
 							<img src="assets/img/buyyyy.png" alt="" style="width: 25%;">
-							<h6><a href= "/faqs/general">General</a></h6>
+							<h6><a href= "general">General</a></h6>
 						</div>
 					</div>
 				</div>
@@ -22,7 +22,7 @@
 					<div class="faqs">
 						<div class="text-center">
 							<img src="assets/img/text1.png" alt="" style="width: 25%;">
-							<h6><a href= "/faqs/delivery">Delivery</a></h6>
+							<h6><a href= "delivery">Delivery</a></h6>
 						</div>
 					</div>
 				</div>
@@ -30,7 +30,7 @@
 					<div class="faqs">
 						<div class="text-center">
 							<img src="assets/img/text2.png" alt="" style="width: 25%;">
-							<h6><a href= "/faqs/order-issue">Order issues</a></h6>
+							<h6><a href= "order-issue">Order issues</a></h6>
 						</div>
 					</div>
 				</div>
@@ -38,7 +38,7 @@
 					<div class="faqs">
 						<div class="text-center">
 							<img src="assets/img/text.3.png" alt="" style="width: 25%;">
-							<h6><a href="/faqs/product_and_services">Products & Services</a></h6>
+							<h6><a href="product_and_services">Products & Services</a></h6>
 						</div>
 					</div>
 				</div>
@@ -49,7 +49,7 @@
 					<div class="faqs">
 						<div class="text-center">
 							<img src="assets/img/text4.png" alt="" style="width: 25%;">
-							<h6><a href="/faqs/payments">Payments</a></h6>
+							<h6><a href="payments">Payments</a></h6>
 						</div>
 					</div>
 				</div>
@@ -57,7 +57,7 @@
 					<div class="faqs">
 						<div class="text-center">
 							<img src="assets/img/text5.png" alt="" style="width: 25%;">
-							<h6><a href="/faqs/return">Returns & Refunds</a></h6>
+							<h6><a href="return">Returns & Refunds</a></h6>
 						</div>
 					</div>
 				</div>
@@ -65,7 +65,7 @@
 					<div class="faqs">
 						<div class="text-center">
 							<img src="assets/img/text6.png" alt="" style="width: 25%;">
-							<h6><a href="/faqs/technical-issue">Technical issues</a></h6>
+							<h6><a href="technical-issue">Technical issues</a></h6>
 						</div>
 					</div>
 				</div>
