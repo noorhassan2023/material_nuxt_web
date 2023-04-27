@@ -49,7 +49,11 @@
                     >
                       {{ product.vProductName }}
                     </div>
-                    <div class="doctors-name">{{ product.vProductUnit }}</div>
+                    <div  :class="
+                        $i18n.locale == 'en'
+                          ? 'doctors-name text-left'
+                          : 'doctors-name text-right'
+                      ">{{ product.vProductUnit }}</div>
 
                     <div
                       :class="
@@ -115,5 +119,9 @@ export default {
 <style scoped>
 div.shadow.item1.card {
   width: 200px !important;
+}
+
+.text-danger{
+	font-size:14px;
 }
 </style>
