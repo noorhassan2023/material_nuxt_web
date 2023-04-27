@@ -41,6 +41,7 @@ export default {
     "bootstrap/dist/css/bootstrap.min.css",
     "@fortawesome/fontawesome-free/css/all.css",
     "~/assets/style/style.css",
+	"~/assets/style/style_edit.css",
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

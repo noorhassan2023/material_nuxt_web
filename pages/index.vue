@@ -38,9 +38,9 @@ export default {
   data() {
     return {
       categories: [],
-      new_products: [],
-      best_sellers: [],
-      suggested_products: [],
+    //   new_products: [],
+    //   best_sellers: [],
+    //   suggested_products: [],
 	  new_sections:[],
     }
   },
@@ -48,9 +48,9 @@ export default {
     async getData() {
       const all_data = await HOME_API.gethomeData();
       this.categories = all_data.responseData.categories
-      this.suggested_products = this.categories[0].products
-      this.new_products = all_data.responseData.newlyArrivedProducts
-      this.best_sellers = all_data.responseData.bestSellerProducts
+    //   this.suggested_products = this.categories[0].products
+    //   this.new_products = all_data.responseData.newlyArrivedProducts
+    //   this.best_sellers = all_data.responseData.bestSellerProducts
     },
 	 async getSectionData() {
       const all_data = await HOME_API.gethomeSectionData();

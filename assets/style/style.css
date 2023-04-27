@@ -2,7 +2,7 @@
 
 body {
     color: #666;
-    font-family: 'FONTSPRING DEMO - Loew';
+ 
     font-size: 14px;
     font-weight: 400;
     line-height: 24px;
@@ -555,6 +555,12 @@ a:not([href]):not([tabindex]):hover {
 hr{
     color: #DEDEDE;
 }
+.card {
+    width: 350px; 
+    height: 250px;
+}
+
+
 .card-img{
     border-radius: 13px;
     box-shadow: 0 0 3px 0px;
@@ -982,6 +988,7 @@ label{
 }
 
 .doctors-name {
+    width: 100%;
     text-align: left;
     margin-left: 8px;
     font-size: 12px;
@@ -1038,12 +1045,6 @@ label{
 }
 .card-header-edit{
     height: 50%;
-}
-.tow-rtl{
-    text-align: right !important
-}
-.loc{
-    margin-right: 15px;
 }
 
 .owl-theme .owl-controls {
@@ -3036,11 +3037,11 @@ body.menu-opened {
 @media (max-width: 575.99px){
     .hero {
         width: 85% !important;
-        margin-top: 0px !important;
+        margin-top: -123px !important;
     }
     .absolute {
         position: absolute;
-        bottom: -213px !important;
+        bottom: -293px !important;
         left: 43px !important;
     }
 }
@@ -3140,7 +3141,7 @@ body.menu-opened {
     
     .hero {
         width: 100%;
-        margin-top: 42px;
+        margin-top: -72px;
     }
     .img-water{
         width: 70%;

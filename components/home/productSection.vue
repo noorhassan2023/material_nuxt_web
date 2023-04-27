@@ -1,5 +1,10 @@
 <template>
   <section class="section meet-doctors bg-white" >
+
+
+
+
+
 <div v-for="(item, i) in sections" :key="i" >
     <div class="text-1 mb-5"  v-if="item.category_id != '-1'">
       <div class="row">
@@ -30,11 +35,10 @@
               data-target="#Buy"
             >
               <div class="card-body doctor text-center">
-                <a href="#" class="a-edit card-a p-2">
+                <a href="#" class="a-edit card-a">
                   <img
                     :src="product.vProductImage"
                     :alt="product.vProductName"
-                    class="mx-auto"
                     width="100"
                     height="100"
                   />
