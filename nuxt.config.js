@@ -17,6 +17,22 @@ export default {
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    script: [
+      {
+        src: "https://code.jquery.com/jquery-3.3.1.min.js",
+        type: "text/javascript"
+      },
+      {
+        src:
+          "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js",
+        type: "text/javascript"
+      },
+      {
+        src:
+          "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js",
+        type: "text/javascript"
+      }
+    ]
   },
 
 
@@ -30,15 +46,15 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '~/plugins/vue-carousel.js', mode: 'client' },
-    { src: '~/plugins/custom.js' },
-
+    { src: '~/plugins/custom.js' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [],
+  buildModules: [
+  ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -51,6 +67,15 @@ export default {
     '@nuxtjs/i18n',
     '@nuxtjs/toast',
   ],
+
+  //vuetify object instance
+  // vuetify: {
+  //   customVariables: ['~/assets/variables.scss'],
+  //   components: {
+  //     VSkeletonLoader
+  //   }
+  // },
+
 
   //toast object instance
   toast: {
