@@ -7,7 +7,8 @@
             <div class="col-md-2 float-left">
               <div class="logo">
                 <NuxtLink :to="localePath('/')">
-                  <img alt="Logo" src="~/assets/img/logo.png"/></NuxtLink>
+                  <img alt="Logo" src="~/assets/img/logo.png"
+                /></NuxtLink>
               </div>
             </div>
             <div class="col-md-10">
@@ -45,14 +46,14 @@
                       }}</NuxtLink>
                     </li>
 
-                    <li class="dropdown nav-item">
+                    <li class="dropdown nav-item custom_btn">
                       <div
-                        class="nav-link  a"
+                        class="nav-link a"
                         v-for="locale in availableLocales"
                         :key="locale.code"
                         @click="changeLocale()"
                       >
-                        {{ locale.code.toUpperCase() }}
+                        <b>{{ locale.code.toUpperCase() }}</b>
                       </div>
                     </li>
                   </ul>
@@ -73,11 +74,12 @@
       </div>
       <div class="page_title">
         <NuxtLink :to="localePath('/')">
-		<img
+          <img
             src="~/assets/img/logo.png"
             alt="Logo"
             class="img-fluid"
-			width="60" height="60"
+            width="60"
+            height="60"
         /></NuxtLink>
       </div>
     </header>
@@ -116,28 +118,22 @@
             </div>
           </li>
 
-		   <li class="mobile-menu-item clearfix">
-                      <div
-                        class="nav-link a" style="font-weight:bold"
-                        v-for="locale in availableLocales"
-                        :key="locale.code"
-                        @click="changeLocale()"
-                      >
-                        {{ locale.code.toUpperCase() }}
-                      </div>
-            </li>
-
+          <li class="mobile-menu-item clearfix custom_btn">
+            <div
+              class="nav-link a"
+              style="font-weight: bold"
+              v-for="locale in availableLocales"
+              :key="locale.code"
+              @click="changeLocale()"
+            >
+              {{ locale.code.toUpperCase() }}
+            </div>
+          </li>
         </ul>
       </div>
     </b-sidebar>
     <!-- </div> -->
   </div>
-
-
-
-
-
-  
 </template>
 
 <script>

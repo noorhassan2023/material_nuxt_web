@@ -5,7 +5,7 @@
         <slide v-for="item in categories" :key="item.id">
             <div class="item">
               <div class="doctor text-center">
-                <a @click="filterProduct(item)">
+                <div class="custom_btn" @click="filterProduct(item)">
                   <img
                     :src="item.vImage"
                     :alt="item.vName"
@@ -14,7 +14,7 @@
                     height="100"
                   />
                   <div class="doctors-name1">{{ item.vName }}</div>
-                </a>
+                </div>
               </div>
             </div>
         </slide>
@@ -48,6 +48,10 @@ export default {
   },
 }
 </script>
-
+<style>
+.custom_btn{
+  cursor: pointer;
+}
+</style>
 
 

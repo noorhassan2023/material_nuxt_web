@@ -44,3 +44,10 @@
     </div>
   </section>
 </template>
+<style scoped>
+@media only screen and (max-width: 400px) {
+  .banner-content{
+    text-align: center !important
+  }
+}
+</style>
