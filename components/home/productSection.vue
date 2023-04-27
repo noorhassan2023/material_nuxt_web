@@ -1,10 +1,5 @@
 <template>
   <section class="section meet-doctors bg-white" >
-
-
-
-
-
 <div v-for="(item, i) in sections" :key="i" >
     <div class="text-1 mb-5"  v-if="item.category_id != '-1'">
       <div class="row">
@@ -47,7 +42,7 @@
                     {{ $t('main_page.price') }}
                   </div>
                   <div :class="$i18n.locale == 'en'?  'text-left size p-2 pt-0': 'text-right size p-2 pt-0'">
-                    <s> {{ product.dDiscountedProductPrice }} </s
+                    <s v-if="product.dDiscountedProductPrice !=  product.dbOriginalProductPrice"> {{ product.dDiscountedProductPrice }} </s
                     ><span class="text-danger" style="font-size: 1rem">
                       {{ product.dbOriginalProductPrice }}</span
                     >
