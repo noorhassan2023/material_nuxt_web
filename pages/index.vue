@@ -81,37 +81,5 @@ export default {
 </script>
 
 
-<style>
-.card {
-  /* background-color: #f8f9fa; */
-  border-radius: 10px;
-  font-size: 1.2rem;
-}
 
-.card-title {
-  font-weight: bold;
-}
-
-.card-text {
-  color: #6c757d;
-}
-
-.btn {
-  background-color: #007bff;
-  border-color: #007bff;
-}
-
-.btn:hover {
-  background-color: #0069d9;
-  border-color: #0062cc;
-
-}
-.doctors-name {
-	white-space: nowrap; 
-	overflow: hidden;
-	 text-overflow: ellipsis;
-
-}
-
-</style>
 

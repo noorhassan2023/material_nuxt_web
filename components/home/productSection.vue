@@ -20,12 +20,7 @@
     </div>
 
     <div
-      :class="
-        $i18n.locale == 'en'
-          ? 'owl-carousel size text-left p-4'
-          : 'owl-carousel size text-right p-2'
-      "
-    >
+      :class="$i18n.locale == 'en'? 'owl-carousel size text-left ': 'owl-carousel size text-right '">
       <client-only>
         <carousel v-bind="options">
           <slide v-for="(product, i) in item.products" :key="i">
@@ -44,8 +39,10 @@
                   />
                   <hr />
                   <div class="doctors-name">
-                    {{ product.vProductName }}{{ product.vProductUnit }}
+                    {{ product.vProductName }}
                   </div>
+				  <div class="doctors-name">{{ product.vProductUnit }}</div>
+
                   <div :class="$i18n.locale == 'en'? 'doctors-position1 text-left' : 'doctors-position1 text-right'  ">
                     {{ $t('main_page.price') }}
                   </div>
