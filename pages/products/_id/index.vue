@@ -1,6 +1,13 @@
 <template>
 <div class="main-content">
-   <section class="section row-middle">
+	 <b-overlay
+      id="overlay-background"
+      variant="grey"
+      :show="!isLoaded"
+      style="min-height: 65vh"
+    >
+    
+    <section class="section row-middle">
 	<div class="container mb-5">
 			<div class="row">
 			<div class="col-md-4">
@@ -38,7 +45,7 @@
 		</div>
 		</div>
 	</section>  
-	
+	</b-overlay>
   </div>
 </template>
 
@@ -50,14 +57,16 @@ import Product_API from '@/services/apis/product_api'
 export default {
   data() {
     return {
-		singleProduct:Object
+		singleProduct:Object,
+		 isLoaded: false,
     }
   },
   methods: {
     async getSingleProduct() {
       const productId =this.$route.params?.id
       const res = await Product_API.getProductDetail(productId)
-      this.singleProduct = res.data.responseData?.productDetails
+      this.singleProduct = res.data.responseData?.productDetails;
+	  this.isLoaded = true;
 	   console.log(this.singleProduct);
     }
   },
