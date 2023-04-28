@@ -4,7 +4,7 @@
       id="overlay-background"
       variant="grey"
       :show="!isLoaded"
-      style="min-height: 65vh"
+      style="min-height: 50vh"
     >
     
     <section class="section row-middle">
