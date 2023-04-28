@@ -18,7 +18,9 @@
 		"help":"Help",
 		"material":"Material",
 		"price":"Price",
-		"sar":"SAR"
+		"sar":"SAR",
+		"error":"We're sorry, the page you requested could not be found.",
+		"go_to_homepage":"Go to homepage"
 	},
 	"contact":{
 		"name":"Name",
