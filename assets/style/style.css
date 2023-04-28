@@ -532,7 +532,7 @@ a:not([href]):not([tabindex]):hover {
     min-height: 40px;
     padding: 7px 15px;
     position: absolute;
-    right: 15px;
+    /* right: 15px; */
     top: 0;
 }
 .top-nav-search .btn1 {

@@ -1,7 +1,5 @@
 <template>
-  <section style="background: #F7F7F7;">
-<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-
+  <section>
 
     <client-only>
       <carousel v-bind="options" class="owl-carousel text-center" :indicator-type="line">
@@ -17,8 +15,8 @@
         </slide>
       </carousel>
     </client-only> 
-	</div>
 	</section>
+	
 </template>
 
 <script>

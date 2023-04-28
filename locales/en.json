@@ -30,5 +30,8 @@
 		"reach-us":"Reach us",
 		"contact-us":"Contact Us",
 		"call-us":"Call us"
+	},
+	"products":{
+		"search":"Search here"
 	}
 }

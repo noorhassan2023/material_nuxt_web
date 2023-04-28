@@ -4,17 +4,9 @@
       id="overlay-background"
       variant="grey"
       :show="!isLoaded"
-      style="height: 100vh"
+      style="min-height: 100vh"
     >
-      <template v-slot:overlay>
-		<div class="lds-facebook">
-          <div></div>
-          <div></div>
-          <div></div>
-		</div>
-	 </template>
       <ProductFilter @setSearch="handleSearch" />
-
       <div v-if="isLoaded">
         <Products :productList="productList" @paginate="paginate" />
       </div>

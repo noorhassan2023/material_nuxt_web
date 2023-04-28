@@ -1,122 +1,37 @@
 <template>
   <div>
     <div class="container">
-      <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 product-mar1">
-        <div
-          class="col card-mar"
+      <div class="row row-cols-2 row-cols-md-4 row-cols-lg-5  pb-5 mt-5" id="product-list">
+        <div class="col-md-3 pt-3"
           v-for="item in productList.productList"
           :key="item.id"
-          data-toggle="modal"
-          data-target="#Buy"
         >
-          <div class="shadow card-img doctor text-center">
-            <a href="#" class="card-a">
-              <img
-                class="img-water"
-                :src="item.vProductImage"
-                :alt="item.vProductName"
-                width="100"
-                height="100"
-              />
-              <hr class="hr-margin" />
-              <div
-                :class="
-                  $i18n.locale == 'en'
-                    ? 'doctor-edit doctors-name text-left'
-                    : 'doctor-edit doctors-name text-right'
-                "
-              >
-                {{ item.vProductName }} {{ item.vProductUnit }}
-              </div>
-              <div
-                :class="
-                  $i18n.locale == 'en'
-                    ? 'doctors-position1 text-left'
-                    : 'doctors-position1 text-right'
-                "
-              >
-                {{ $t('main_page.price') }}
-              </div>
-              <div :class="$i18n.locale == 'en' ? 'doctor-edit size pb-3 text-left' : 'doctor-edit size pb-3 text-right'" style="color: #012cda">
-                {{ item.dbOriginalProductPrice }} {{ $t('main_page.sar') }}
-              </div>
-            </a>
-          </div>
+          <div class="shadow item1 card">
+			<NuxtLink :to="localePath('/products/'+item.biProductId)" target="_blank" >
 
-		  <div class="shadow card-img doctor text-center">
-            <a href="#" class="card-a">
-              <img
-                class="img-water"
-                :src="item.vProductImage"
-                :alt="item.vProductName"
-                width="100"
-                height="100"
-              />
-              <hr class="hr-margin" />
-              <div
-                :class="
-                  $i18n.locale == 'en'
-                    ? 'doctor-edit doctors-name text-left'
-                    : 'doctor-edit doctors-name text-right'
-                "
-              >
-                {{ item.vProductName }} {{ item.vProductUnit }}
-              </div>
-              <div
-                :class="
-                  $i18n.locale == 'en'
-                    ? 'doctors-position1 text-left'
-                    : 'doctors-position1 text-right'
-                "
-              >
-                {{ $t('main_page.price') }}
-              </div>
-              <div :class="$i18n.locale == 'en' ? 'doctor-edit size pb-3 text-left' : 'doctor-edit size pb-3 text-right'" style="color: #012cda">
-                {{ item.dbOriginalProductPrice }} {{ $t('main_page.sar') }}
-              </div>
-            </a>
+			<div  class="card-body doctor">
+                    <img  :src="item.vProductImage" :alt="item.vProductName"
+                        class="" width="100" height="100">
+                     <hr>	
+                    <div :class="$i18n.locale == 'en'? 'doctors-name text-left': 'doctors-name text-right'">{{ item.vProductName }}</div>
+                    <div :class="$i18n.locale == 'en'? 'doctors-name text-left': 'doctors-name text-right'">{{ item.vProductUnit }}</div>
+                    <div :class="$i18n.locale == 'en'? 'doctors-position1 text-left': 'doctors-position1 text-right'" >{{ $t('main_page.price') }}</div>
+                    <div :class="$i18n.locale == 'en'? 'size text-left': 'size text-right'">
+						<s style="font-size: .8rem" class="text-danger"
+                        v-if="item.dDiscountedProductPrice !=item.dbOriginalProductPrice">
+                        {{ item.dbOriginalProductPrice }} </s>
+						<span style="font-size: 1rem">
+                        {{ item.dDiscountedProductPrice }}
+                        {{ $t('main_page.sar') }}</span>
+				 </div>
+				 
+            
+            </div></NuxtLink>
           </div>
-		  <div class="shadow card-img doctor text-center">
-            <a href="#" class="card-a"> 
-              <img
-                class="img-water"
-                :src="item.vProductImage"
-                :alt="item.vProductName"
-                width="100"
-                height="100"
-              />
-              <hr class="hr-margin" />
-              <div
-                :class="
-                  $i18n.locale == 'en'
-                    ? 'doctor-edit doctors-name text-left'
-                    : 'doctor-edit doctors-name text-right'
-                "
-              >
-                {{ item.vProductName }} {{ item.vProductUnit }}
-              </div>
-              <div
-                :class="
-                  $i18n.locale == 'en'
-                    ? 'doctors-position1 text-left'
-                    : 'doctors-position1 text-right'
-                "
-              >
-                {{ $t('main_page.price') }}
-              </div>
-              <div :class="$i18n.locale == 'en' ? 'doctor-edit size pb-3 text-left' : 'doctor-edit size pb-3 text-right'" style="color: #012cda">
-                {{ item.dbOriginalProductPrice }} {{ $t('main_page.sar') }}
-              </div>
-            </a>
-          </div>
-          <div class="clearfix"></div>
-          <br />
         </div>
       </div>
     </div>
 
-    <div class="clearfix"></div>
-    <br />
     <div class="mx-auto row mt-2">
       <b-pagination
         v-model="page"

@@ -4,9 +4,8 @@
       id="overlay-background"
       variant="grey"
       :show="!isLoaded"
-      style="min-height: 50vh"
+      style="min-height:50vh"
     >
-    
     <section class="section row-middle">
 	<div class="container mb-5">
 			<div class="row">
@@ -67,7 +66,6 @@ export default {
       const res = await Product_API.getProductDetail(productId)
       this.singleProduct = res.data.responseData?.productDetails;
 	  this.isLoaded = true;
-	   console.log(this.singleProduct);
     }
   },
   created() {
