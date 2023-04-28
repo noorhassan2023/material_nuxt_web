@@ -6,12 +6,13 @@
       :show="!isLoaded"
       style="height: 100vh"
     >
-      <template v-slot:overlay
-        ><div class="lds-facebook">
+      <template v-slot:overlay>
+		<div class="lds-facebook">
           <div></div>
           <div></div>
-          <div></div></div
-      ></template>
+          <div></div>
+		</div>
+	 </template>
       <ProductFilter @setSearch="handleSearch" />
 
       <div v-if="isLoaded">
@@ -25,7 +26,6 @@
 <script>
 import Products from '@/components/products/index.vue'
 import ProductFilter from '@/components/products/filter.vue'
-
 import Product_API from '@/services/apis/product_api'
 
 export default {

@@ -52,6 +52,7 @@ export default {
     },
 	 async getSectionData() {
       const all_data = await HOME_API.gethomeSectionData();
+	  console.log(all_data);
       this.new_sections = all_data.responseData.sections;
     },
 

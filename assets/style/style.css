@@ -265,7 +265,7 @@ a:not([href]):not([tabindex]):hover {
     align-items: center;
     display: flex;
     flex-wrap: wrap;
-    box-shadow: 1px 1px 8px 0;
+    /* box-shadow: 1px 1px 8px 0; */
 }
 
 .inner-bg {

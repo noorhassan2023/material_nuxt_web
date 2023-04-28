@@ -14,7 +14,7 @@
                   <div class="">
                     <div class="location1 d-flex">
                       <span class="subheading" style="margin-right: 10px">
-                        <a href="">
+                        <a href="https://apps.apple.com/us/app/%D9%85%D8%AA%D9%8A%D8%B1%D9%8A%D8%A7%D9%84/id1626095299" target="_blank">
                           <img
                             src="~/assets/img/appstore.svg"
                             alt=""
@@ -23,7 +23,7 @@
                         /></a>
                       </span>
                       <span class="mb-3 subheading" style="margin-right: 10px">
-                        <a href="">
+					     <a href="https://play.google.com/store/apps/details?id=com.material.customer" target="_blank">
                           <img
                             class="test-10"
                             src="~/assets/img/googleplay.svg"

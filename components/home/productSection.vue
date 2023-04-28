@@ -32,7 +32,8 @@
                 data-target="#Buy"
               >
                 <div class="card-body doctor text-center">
-                  <a href="#" class="a-edit card-a">
+
+			  <NuxtLink :to="localePath('/products/'+product.biProductId)" target="_blank" class="a-edit card-a">
                     <img
                       :src="product.vProductImage"
                       :alt="product.vProductName"
@@ -84,7 +85,7 @@
                         {{ $t('main_page.sar') }}</span
                       >
                     </div>
-                  </a>
+                  </NuxtLink>
                 </div>
               </div>
             </slide>
