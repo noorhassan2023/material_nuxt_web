@@ -17,7 +17,7 @@
 						<div class="row g-0">
 						  <div class="padding-img col-md-4">
 							<div>
-								<img src="assets/img/18.png" class="img-fluid rounded-start" alt="...">
+								<img src="ّّ~/assets/img/18.png" class="img-fluid rounded-start" alt="...">
 
 							</div>
 						  </div>

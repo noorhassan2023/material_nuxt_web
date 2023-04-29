@@ -14,7 +14,7 @@
             <div class="row g-0" style="height: 100%">
               <div class="col-md-4">
                 <img
-                  src="assets/img/18.png"
+                  src="~/assets/img/18.png"
                   class="img-fluid rounded-start"
                   alt="..."
                   style="height: 100%"
@@ -44,7 +44,7 @@
             <div class="row g-0" style="height: 100%">
               <div class="col-md-4">
                 <img
-                  src="assets/img/11.png"
+                  src="~/assets/img/11.png"
                   class="img-fluid rounded-start"
                   alt="..."
                   style="height: 100%"
@@ -96,7 +96,7 @@
                         <div class="row g-0">
                           <div class="col-md-4">
                             <img
-                              src="assets/img/3.png"
+                              src="~/assets/img/3.png"
                               class="img-fluid rounded-start"
                               alt="..."
                             />
@@ -117,7 +117,7 @@
                         <div class="row g-0">
                           <div class="col-md-4">
                             <img
-                              src="assets/img/7.png"
+                              src="~/assets/img/7.png"
                               class="img-fluid rounded-start"
                               alt="..."
                             />
@@ -138,7 +138,7 @@
                         <div class="row g-0">
                           <div class="col-md-4">
                             <img
-                              src="assets/img/14.png"
+                              src="~/assets/img/14.png"
                               class="img-fluid rounded-start"
                               alt="..."
                             />
@@ -159,7 +159,7 @@
                         <div class="row g-0">
                           <div class="col-md-4">
                             <img
-                              src="assets/img/19.png"
+                              src="~/assets/img/19.png"
                               class="img-fluid rounded-start"
                               alt="..."
                             />
@@ -181,7 +181,7 @@
                           <div class="row g-0">
                             <div class="col-md-4">
                               <img
-                                src="assets/img/3.png"
+                                src="~/assets/img/3.png"
                                 class="img-fluid rounded-start"
                                 alt="..."
                               />
@@ -202,7 +202,7 @@
                           <div class="row g-0">
                             <div class="col-md-4">
                               <img
-                                src="assets/img/7.png"
+                                src="~/assets/img/7.png"
                                 class="img-fluid rounded-start"
                                 alt="..."
                               />
@@ -223,7 +223,7 @@
                           <div class="row g-0">
                             <div class="col-md-4">
                               <img
-                                src="assets/img/14.png"
+                                src="~/assets/img/14.png"
                                 class="img-fluid rounded-start"
                                 alt="..."
                               />
@@ -244,7 +244,7 @@
                           <div class="row g-0">
                             <div class="col-md-4">
                               <img
-                                src="assets/img/19.png"
+                                src="~/assets/img/19.png"
                                 class="img-fluid rounded-start"
                                 alt="..."
                               />
