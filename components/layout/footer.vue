@@ -1,16 +1,21 @@
 <template>
-  <footer class="footer" >
-    <div class="footer-top ">
+  <footer class="footer" style="position: relative; width: 100vw">
+    <div class="footer-top">
       <div class="container">
-        <div class="row footer-edit" >
+        <div class="row footer-edit">
           <div class="col-sm-4 col-lg-4 col-md-4">
             <div class="footer-widget">
               <div class="about-clinic text-center">
-                <img class="ml-auto" src="~/assets/img/Logo-2.png" alt="" style="width: 60%" />
+                <img
+                  class="ml-auto"
+                  src="~/assets/img/Logo-2.png"
+                  alt=""
+                  style="width: 60%"
+                />
               </div>
             </div>
           </div>
-          <div class="col-sm-4 col-lg-4 col-md-4 text-center" >
+          <div class="col-sm-4 col-lg-4 col-md-4 text-center">
             <div class="footer-widget">
               <h4 class="footer-title">{{ $t('main_page.material') }}</h4>
               <ul class="footer-menu">
@@ -63,7 +68,7 @@
       </div>
     </div>
 
-    <div class="footer-bottom" style="border: none;">
+    <div class="footer-bottom" style="border: none">
       <div class="container">
         <div class="copyright">
           <div class="row">
@@ -72,18 +77,42 @@
                 <div class="appointment-btn">
                   <ul class="social-icons clearfix">
                     <li>
-                      <a href="#" target="_blank" title="twitter"
+                      <a
+                        href="#"
+                        @click="
+                          goToLink(
+                            'https://twitter.com/materialsa_?s=21&t=GxMuAO3PZCfQbp-f5gpeQg'
+                          )
+                        "
+                        target="_blank"
+                        title="twitter"
                         ><i class="fab fa-twitter"></i
                       ></a>
                     </li>
 
                     <li>
-                      <a href="#" target="_blank" title="instagram"
+                      <a
+                        href="#"
+                        @click="
+                          goToLink(
+                            'https://instagram.com/materialsa_?igshid=YmMyMTA2M2Y='
+                          )
+                        "
+                        target="_blank"
+                        title="instagram"
                         ><i class="fab fa-instagram"></i
                       ></a>
                     </li>
                     <li>
-                      <a href="#" target="_blank" title="linkedin-in"
+                      <a
+                        href="#"
+                        @click="
+                          goToLink(
+                            'https://www.linkedin.com/company/materialsa/'
+                          )
+                        "
+                        target="_blank"
+                        title="linkedin-in"
                         ><i class="fab fa-linkedin-in"></i
                       ></a>
                     </li>
@@ -97,3 +126,12 @@
     </div>
   </footer>
 </template>
+<script>
+export default {
+  methods: {
+    goToLink(link) {
+      window.open(link, '_blank')
+    },
+  },
+}
+</script>

@@ -1,41 +1,44 @@
 {
-	
-	"main_page":{
-		"home":"HOME",
-		"about":"ABOUT",
-		"products":"PRODUCTS",
-		"contact":"CONTACT",
-		"slogan":"Local & Imported Beverages",
-		"slogan_sub":"Delivery Solution",
-		"new_products":"New products",
-		"best_sellers":"Best Sellers",
-		"suggested_products":"Suggested Products",
-		"more":"More",
-		"blogs":"Blogs",
-		"faqs":"FAQS",
-		"terms_conditions":"Terms & Condition",
-		"privacy_policy":"Privacy Policy",
-		"help":"Help",
-		"material":"Material",
-		"price":"Price",
-		"sar":"SAR",
-		"error":"We're sorry, the page you requested could not be found.",
-		"go_to_homepage":"Go to homepage"
-	},
-	"contact":{
-		"name":"Name",
-		"e-mail":"E-mail",
-		"object":"Object",
-		"message":"Message",
-		"submit":"Submit",
-		"email-us":"Email us",
-		"reach-us":"Reach us",
-		"contact-us":"Contact Us",
-		"call-us":"Call us"
-	},
-	"products":{
-		"search":"Search here",
-		"not_found":"The product cannot be found.",
-		"go_to_products":"Go To Products page"
-	}
+
+  "main_page": {
+    "home": "HOME",
+    "about": "ABOUT",
+    "products": "PRODUCTS",
+    "contact": "CONTACT",
+    "slogan": "Local & Imported Beverages",
+    "slogan_sub": "Delivery Solution",
+    "new_products": "New products",
+    "best_sellers": "Best Sellers",
+    "suggested_products": "Suggested Products",
+    "more": "More",
+    "blogs": "Blogs",
+    "faqs": "FAQS",
+    "terms_conditions": "Terms & Condition",
+    "privacy_policy": "Privacy Policy",
+    "help": "Help",
+    "material": "Material",
+    "price": "Price",
+    "sar": "SAR",
+    "error": "We're sorry, the page you requested could not be found.",
+    "go_to_homepage": "Go to homepage"
+  },
+  "contact": {
+    "name": "Name",
+    "e-mail": "E-mail",
+    "object": "Object",
+    "message": "Message",
+    "submit": "Submit",
+    "email-us": "Email us",
+    "reach-us": "Reach us",
+    "contact-us": "Contact Us",
+    "call-us": "Call us"
+  },
+  "products": {
+    "search": "Search here",
+    "not_found": "The product cannot be found.",
+    "go_to_products": "Go To Products page"
+  },
+  "about": {
+    "content": "Material is a Beverages Multichannel platform based in Saudi Arabia, specializing in offering wide range of local and imported beverages to consumers and businesses with an affordable price. We material are collaborating with extensive beverages companies to make the easiest beverage solution for you and for your suitable location. Our vision is to be the fastest and the largest delivery app in the region to satisfy our customer first. Our mission is to serve the communities through purpose-driven, empowered, and innovative teams. "
+  }
 }
