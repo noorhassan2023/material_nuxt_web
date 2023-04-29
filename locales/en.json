@@ -35,7 +35,7 @@
 	},
 	"products":{
 		"search":"Search here",
-		"not_found":"This product cannot be found.",
+		"not_found":"The product cannot be found.",
 		"go_to_products":"Go To Products page"
 	}
 }

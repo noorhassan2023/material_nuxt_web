@@ -8,7 +8,7 @@
               <h2 class="text1" style="align-items: center">
                 {{ item.category_name }}
               </h2>
-              <NuxtLink :to="localePath('/products')" class="mt-1 task1">{{
+              <NuxtLink :to="localePath('/products?category_id='+item.category_id)" class="mt-1 task1">{{
                 $t('main_page.more')
               }}</NuxtLink>
             </div>

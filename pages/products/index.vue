@@ -29,10 +29,17 @@ export default {
       isLoaded: false,
     }
   },
+  computed: {
+    category_id() {
+      return this.$route?.query?.category_id;
+	}
+  },
   methods: {
     async getAllProducts(page) {
-      const body =
-        this.searchVal.length > 0 ? { vSerchString: this.searchVal } : ''
+          const searchParam= (this.searchVal.length > 0 ) ? { vSerchString: this.searchVal } : ''
+		  const CategoyParam= (this.category_id.length > 0 ) ? {  iCategoryId : this.category_id } :''
+		
+		const body= { ...searchParam, ...CategoyParam }
       const res = await Product_API.getProducts(page, body)
       this.isLoaded = true
       this.productList = res.data.responseData

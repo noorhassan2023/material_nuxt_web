@@ -5,7 +5,8 @@
         <slide v-for="item in categories" :key="item.id">
             <div class="item">
               <div class="doctor text-center">
-                <div class="custom_btn" @click="filterProduct(item)">
+                <div class="custom_btn" >
+				<NuxtLink :to="localePath('/products?category_id='+item.id)" >
                   <img
                     :src="item.vImage"
                     :alt="item.vName"
@@ -14,6 +15,7 @@
                     height="100"
                   />
                   <div class="doctors-name1">{{ item.vName }}</div>
+				  </NuxtLink>
                 </div>
               </div>
             </div>
