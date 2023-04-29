@@ -34,6 +34,8 @@
 		"call-us":"Call us"
 	},
 	"products":{
-		"search":"Search here"
+		"search":"Search here",
+		"not_found":"This product cannot be found.",
+		"go_to_products":"Go To Products page"
 	}
 }
