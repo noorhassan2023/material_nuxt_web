@@ -555,10 +555,7 @@ a:not([href]):not([tabindex]):hover {
 hr{
     color: #DEDEDE;
 }
-.card {
-    width: 250px ; 
-    height: 250px;
-}
+
 
 
 .card-img{
