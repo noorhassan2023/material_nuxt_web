@@ -61,3 +61,21 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.card {
+    width: 250px ; 
+    height: 250px;
+}
+
+
+.card-img{
+    border-radius: 13px;
+    box-shadow: 0 0 3px 0px;
+}
+.card-a{
+    width: 100%;
+    text-decoration: none;
+
+}
+</style>
