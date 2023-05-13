@@ -6,14 +6,27 @@
     <div class="col-md-6">
       <div class="top-nav-search">
         <form class="form" @submit.prevent="setSearchVal">
-          <input type="text" class="form-control" v-model="searchVal" :placeholder="$t('products.search')" id="searchProduct"/>
-          <button :class="$i18n.locale == 'en'? 'btn top-nav-search-left': 'btn top-nav-search-right'" type="submit">
+          <input
+            type="text"
+            class="form-control"
+            v-model="searchVal"
+            :placeholder="$t('products.search')"
+            id="searchProduct"
+          />
+          <button
+            :class="
+              $i18n.locale == 'en'
+                ? 'btn top-nav-search-left'
+                : 'btn top-nav-search-right'
+            "
+            type="submit"
+          >
             <i class="fa fa-search"></i>
           </button>
         </form>
       </div>
     </div>
-  </div> 
+  </div>
 </template>
 
 <script>
@@ -34,11 +47,11 @@ export default {
 
 <style scoped>
 .top-nav-search-right {
-    left: 16px;
-    text-align: end;
+  left: 16px;
+  text-align: end;
 }
 .top-nav-search-left {
-    right: 16px;
-    text-align: end;
+  right: 16px;
+  text-align: end;
 }
 </style>

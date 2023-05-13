@@ -1,16 +1,21 @@
 <template>
-  <section >
+  <section>
     <div class="pt-5 pb-5 mt-5 container">
       <div class="row">
         <div class="cl-md-12">
-          <h3 style="color: #012cda">Blog/Latest Posts</h3>
+          <h3 style="color: #012cda">{{ $t('blogs.title') }}</h3>
         </div>
       </div>
     </div>
     <div class="container">
       <div class="row">
         <div class="col-md-8">
-          <div class="card mb-3" style="height: 310px">
+          <div
+            class="card mb-3"
+            style="height: 310px"
+            v-for="(blog, i) in blogs.data"
+            :key="i"
+          >
             <div class="row g-0" style="height: 100%">
               <div class="col-md-4">
                 <img
@@ -23,50 +28,37 @@
               <div class="col-md-8">
                 <div class="card-body">
                   <h5 class="card-title pt-3 pb-3">
-                    How To make Super Website Design
+                    {{ blog.vTitle }}
                   </h5>
-                  <p class="mb-3">Posted on 02 July, 2019</p>
-                  <p class="card-text pb-4">
-                    Forfeited you engrossed but gay sometimes explained. Another
-                    as studied it to evident. Merry sense given he be arise.
-                    Conduct at an replied removal an amongst. ut perspiciatis
-                    unde omnis.
+                  <p class="mb-3">
+                    <span>{{ $t('blogs.publish') }}</span
+                    ><span> {{ blog.created_at }}</span>
                   </p>
-                  <a href="#" class="card-text"
-                    ><span class="text-muted">Read more </span>
-                  </a>
+                  <p
+                    class="card-text pb-4 blog-content"
+                    v-html="blog.txContent"
+                  ></p>
+                  <nuxt-link
+                    href="#"
+                    clnuxt-linkss="card-text"
+                    :to="`/blogs/${blog.slug}`"
+                    ><span class="text-muted"
+                      >{{ $t('blogs.read_more') }}
+                    </span>
+                  </nuxt-link>
                   <i class="fa-solid fa-angle-right"></i>
                 </div>
               </div>
             </div>
           </div>
-          <div class="card mb-3" style="height: 310px">
-            <div class="row g-0" style="height: 100%">
-              <div class="col-md-4">
-                <img
-                  src="~/assets/img/11.png"
-                  class="img-fluid rounded-start"
-                  alt="..."
-                  style="height: 100%"
-                />
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title pt-3 pb-3">
-                    How To make Super Website Design
-                  </h5>
-                  <p class="pb-3">Posted on 02 July, 2019</p>
-                  <p class="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <a href="#" class="card-text"
-                    ><span class="text-muted">Read more </span>
-                  </a>
-                  <i class="fa-solid fa-angle-right"></i>
-                </div>
-              </div>
+          <div class="w-100">
+            <div class="mx-auto row mt-2">
+              <b-pagination
+                v-model="page"
+                :total-rows="blogs.totalRecord"
+                :per-page="blogs.limit"
+                class="mx-auto"
+              ></b-pagination>
             </div>
           </div>
         </div>
@@ -81,12 +73,12 @@
                         class="nav-link active"
                         href="#top-tab1"
                         data-toggle="tab"
-                        >Popular</a
+                        >{{ $t('blogs.popular') }}</a
                       >
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#top-tab2" data-toggle="tab"
-                        >Trending</a
+                      <a class="nav-link" href="#top-tab2" data-toggle="tab">
+                        {{ $t('blogs.trending') }}</a
                       >
                     </li>
                   </ul>
@@ -104,9 +96,11 @@
                           <div class="col-md-8">
                             <div class="card-body">
                               <h6 class="card-title">
-                                How To make Super Website Design
+                                {{ $t('blogs.first_title') }}
                               </h6>
-                              <p class="mb-3">Posted on 02 July, 2019</p>
+                              <p class="mb-3">
+                                {{ $t('blogs.first_post_date') }}
+                              </p>
                             </div>
                           </div>
                         </div>
@@ -125,9 +119,11 @@
                           <div class="col-md-8">
                             <div class="card-body">
                               <h6 class="card-title">
-                                How To make Super Website Design
+                                {{ $t('blogs.first_title') }}
                               </h6>
-                              <p class="mb-3">Posted on 02 July, 2019</p>
+                              <p class="mb-3">
+                                {{ $t('blogs.first_post_date') }}
+                              </p>
                             </div>
                           </div>
                         </div>
@@ -146,9 +142,11 @@
                           <div class="col-md-8">
                             <div class="card-body">
                               <h6 class="card-title">
-                                How To make Super Website Design
+                                {{ $t('blogs.first_title') }}
                               </h6>
-                              <p class="mb-3">Posted on 02 July, 2019</p>
+                              <p class="mb-3">
+                                {{ $t('blogs.first_post_date') }}
+                              </p>
                             </div>
                           </div>
                         </div>
@@ -167,9 +165,11 @@
                           <div class="col-md-8">
                             <div class="card-body">
                               <h6 class="card-title">
-                                How To make Super Website Design
+                                {{ $t('blogs.first_title') }}
                               </h6>
-                              <p class="mb-3">Posted on 02 July, 2019</p>
+                              <p class="mb-3">
+                                {{ $t('blogs.first_post_date') }}
+                              </p>
                             </div>
                           </div>
                         </div>
@@ -268,16 +268,34 @@
           </div>
         </div>
       </div>
-
-      <Subscribe />
     </div>
   </section>
 </template>
-
 <script>
-import Subscribe from '@/components/blogs/subscribe.vue'
+import blogs_api from '~/services/apis/blogs_api'
 
 export default {
-  components: { Subscribe },
+  name: 'all-blogs',
+  data() {
+    return {
+      blogs: [],
+      page: 1,
+    }
+  },
+  methods: {
+    async getdata() {
+      this.blogs = (await blogs_api.getBlogs()).responseData
+    },
+  },
+  created() {
+    this.getdata()
+  },
 }
 </script>
+<style>
+.blog-content {
+  max-height: 7rem !important;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+</style>

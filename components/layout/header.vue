@@ -146,9 +146,11 @@ export default {
   },
   methods: {
     changeLocale() {
-      this.$i18n.locale == 'en'
+      this.$i18n.locale == 'en' && process.client
         ? (this.$i18n.setLocale('ar'), localStorage.setItem('locale', 'ar'))
-        : (this.$i18n.setLocale('en'), localStorage.setItem('locale', 'en'))
+        : this.$i18n.locale == 'ar' && process.client
+        ? (this.$i18n.setLocale('en'), localStorage.setItem('locale', 'en'))
+        : ''
     },
   },
 }

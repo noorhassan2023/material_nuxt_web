@@ -269,15 +269,15 @@
         </div>
       </div>
 
-      <Subscribe />
+      <!-- <Subscribe /> -->
     </div>
   </section>
 </template>
 
 <script>
-import Subscribe from '@/components/blogs/subscribe.vue'
+// import Subscribe from '@/components/blogs/subscribe.vue'
 
 export default {
-  components: { Subscribe },
+//   components: { Subscribe },
 }
 </script>

@@ -1,6 +1,5 @@
 <template>
   <div class="main-content">
-  
     <HomeSlider />
     <HomeBanner :categories="categories" @filtered="filterProducts" />
     <!-- <ProductSlider
@@ -17,10 +16,7 @@
       :products="best_sellers"
     /> -->
 
-	<ProductSection
-      :sections="new_sections"
-    />
-
+    <ProductSection :sections="new_sections" />
   </div>
 </template>
 
@@ -32,28 +28,28 @@ import ProductSection from '@/components/home/productSection.vue'
 import HOME_API from '@/services/apis/home_api'
 
 export default {
-  components: { HomeSlider, HomeBanner ,ProductSection },
+  components: { HomeSlider, HomeBanner, ProductSection },
   data() {
     return {
       categories: [],
-    //   new_products: [],
-    //   best_sellers: [],
-    //   suggested_products: [],
-	  new_sections:[],
+      //   new_products: [],
+      //   best_sellers: [],
+      //   suggested_products: [],
+      new_sections: [],
     }
   },
   methods: {
     async getData() {
-      const all_data = await HOME_API.gethomeData();
+      const all_data = await HOME_API.gethomeData()
       this.categories = all_data.responseData.categories
-    //   this.suggested_products = this.categories[0].products
-    //   this.new_products = all_data.responseData.newlyArrivedProducts
-    //   this.best_sellers = all_data.responseData.bestSellerProducts
+      //   this.suggested_products = this.categories[0].products
+      //   this.new_products = all_data.responseData.newlyArrivedProducts
+      //   this.best_sellers = all_data.responseData.bestSellerProducts
     },
-	 async getSectionData() {
-      const all_data = await HOME_API.gethomeSectionData();
-	  console.log(all_data);
-      this.new_sections = all_data.responseData.sections;
+    async getSectionData() {
+      const all_data = await HOME_API.gethomeSectionData()
+      console.log(all_data)
+      this.new_sections = all_data.responseData.sections
     },
 
     filterProducts(e) {
@@ -61,17 +57,21 @@ export default {
     },
   },
   created() {
-    this.getData();
-	this.getSectionData();
-
+    this.getData()
+    this.getSectionData()
+  },
+  mounted() {
     //setting locale
+    if (process.client) {
+      localStorage.setItem('locale', this.$i18n.locale)
+    }
   },
   watch: {
     '$i18n.locale': {
       handler: function (val) {
         this.getData()
       },
-      deep: true
+      deep: true,
     },
   },
 }

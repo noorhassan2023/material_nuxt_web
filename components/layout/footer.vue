@@ -84,7 +84,6 @@
                             'https://twitter.com/materialsa_?s=21&t=GxMuAO3PZCfQbp-f5gpeQg'
                           )
                         "
-                        target="_blank"
                         title="twitter"
                         ><i class="fab fa-twitter"></i
                       ></a>
