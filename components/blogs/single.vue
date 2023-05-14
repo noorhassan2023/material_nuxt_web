@@ -6,7 +6,7 @@
           <div class="cl-md-12">
             <h3 style="color: #8b8b8b">
               Blog <i class="fa-solid fa-angle-right"></i>
-              <span style="color: #012cda">How to make…</span>
+              <span style="color: #012cda">{{ blog.blogDetail?.vTitle }}</span>
             </h3>
           </div>
         </div>
