@@ -83,60 +83,64 @@
                     </li>
                   </ul>
                   <div class="tab-content">
-                    <div class="tab-pane show active" id="top-tab1" >
-                      <div class="tab-pane show active"
-					   v-for="(pop_blog, k) in popularblogs"
-                        :key="k">
-						<div class="card card-buttom mb-3" style="border: none">
-							<div class="row g-0">
-							<div class="col-md-4">
-								<img
-								:src="pop_blog.vImage"
-								class="img-fluid rounded-start"
-								alt="..."
-								/>
-							</div>
-							<div class="col-md-8">
-								<div class="card-body">
-								<h6 class="card-title">
-									{{ pop_blog.vTitle }}
-								</h6>
-								<p class="mb-3">
-									{{ pop_blog.created_at }}
-								</p>
-								</div>
-							</div>
-							</div>
-						</div>
-					 </div>	
+                    <div class="tab-pane show active" id="top-tab1">
+                      <div
+                        class="tab-pane show active"
+                        v-for="(pop_blog, k) in popularblogs"
+                        :key="k"
+                      >
+                        <div class="card card-buttom mb-3" style="border: none">
+                          <div class="row g-0">
+                            <div class="col-md-4">
+                              <img
+                                :src="pop_blog.vImage"
+                                class="img-fluid rounded-start"
+                                alt="..."
+                              />
+                            </div>
+                            <div class="col-md-8">
+                              <div class="card-body">
+                                <h6 class="card-title">
+                                  {{ pop_blog.vTitle }}
+                                </h6>
+                                <p class="mb-3">
+                                  {{ pop_blog.created_at }}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                   
+
                     <div class="tab-pane" id="top-tab2">
-                          <div class="tab-pane show active"
-					   v-for="(trend_blog, k) in trendblogs"
-                        :key="k">
-						<div class="card card-buttom mb-3" style="border: none">
-							<div class="row g-0">
-							<div class="col-md-4">
-								<img
-								:src="trend_blog.vImage"
-								class="img-fluid rounded-start"
-								alt="..."
-								/>
-							</div>
-							<div class="col-md-8">
-								<div class="card-body">
-								<h6 class="card-title">
-									{{ trend_blog.vTitle }}
-								</h6>
-								<p class="mb-3">
-									{{ trend_blog.created_at }}
-								</p>
-								</div>
-							</div>
-							</div>
-						</div>
-					 </div>	
+                      <div
+                        class="tab-pane show active"
+                        v-for="(trend_blog, k) in trendblogs"
+                        :key="k"
+                      >
+                        <div class="card card-buttom mb-3" style="border: none">
+                          <div class="row g-0">
+                            <div class="col-md-4">
+                              <img
+                                :src="trend_blog.vImage"
+                                class="img-fluid rounded-start"
+                                alt="..."
+                              />
+                            </div>
+                            <div class="col-md-8">
+                              <div class="card-body">
+                                <h6 class="card-title">
+                                  {{ trend_blog.vTitle }}
+                                </h6>
+                                <p class="mb-3">
+                                  {{ trend_blog.created_at }}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -157,25 +161,27 @@ export default {
     return {
       blogs: [],
       page: 1,
-	  trendblogs:[],
-	  popularblogs:[]
-
-
+      trendblogs: [],
+      popularblogs: [],
     }
   },
+  
   methods: {
     async getdata() {
       this.blogs = (await blogs_api.getBlogs()).responseData
     },
-	 async getPopulardata() {
-      this.popularblogs = (await blogs_api.getPopularBlog()).responseData.popular_blogs
-	  this.trendblogs = (await blogs_api.getPopularBlog()).responseData.trending_blogs
+    async getPopulardata() {
+      this.popularblogs = (
+        await blogs_api.getPopularBlog()
+      ).responseData.popular_blogs
+      this.trendblogs = (
+        await blogs_api.getPopularBlog()
+      ).responseData.trending_blogs
     },
-	
   },
   created() {
     this.getdata()
-	this.getPopulardata()
+    this.getPopulardata()
   },
 }
 </script>

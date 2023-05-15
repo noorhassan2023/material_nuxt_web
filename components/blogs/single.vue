@@ -50,7 +50,24 @@
 import blogs_api from '~/services/apis/blogs_api'
 
 export default {
-  head(){},
+  head(){
+    return this.headers_data
+  },
+  computed: {
+    headers_data() {
+      return {
+        title: this.blog.vTitle,
+        meta: [
+          { charset: 'utf-8' },
+          { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+          {
+            name: "description",
+            content: this.blog.txMetaDescription
+          },
+        ],
+      }
+    },
+  },
   data() {
     return {
       blog: {},

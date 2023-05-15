@@ -2,20 +2,6 @@
   <div class="main-content">
     <HomeSlider />
     <HomeBanner :categories="categories" @filtered="filterProducts" />
-    <!-- <ProductSlider
-      :title="$t('main_page.suggested_products')"
-      :products="suggested_products"
-      :type="'suggested'"
-    /> -->
-    <!-- <ProductSlider
-      :title="$t('main_page.new_products')"
-      :products="new_products"
-    />
-    <ProductSlider
-      :title="$t('main_page.best_sellers')"
-      :products="best_sellers"
-    /> -->
-
     <ProductSection :sections="new_sections" />
   </div>
 </template>
@@ -29,26 +15,37 @@ import HOME_API from '@/services/apis/home_api'
 
 export default {
   components: { HomeSlider, HomeBanner, ProductSection },
+  head() {
+    return this.headers_data
+  },
   data() {
     return {
       categories: [],
-      //   new_products: [],
-      //   best_sellers: [],
-      //   suggested_products: [],
       new_sections: [],
     }
+  },
+  computed: {
+    headers_data() {
+      return {
+        title: this.$t('main_page.material'),
+        meta: [
+          { charset: 'utf-8' },
+          { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+          {
+            name: "keywords",
+            content: this.$t("meta.keywords")
+          },
+        ],
+      }
+    },
   },
   methods: {
     async getData() {
       const all_data = await HOME_API.gethomeData()
       this.categories = all_data.responseData.categories
-      //   this.suggested_products = this.categories[0].products
-      //   this.new_products = all_data.responseData.newlyArrivedProducts
-      //   this.best_sellers = all_data.responseData.bestSellerProducts
     },
     async getSectionData() {
       const all_data = await HOME_API.gethomeSectionData()
-      console.log(all_data)
       this.new_sections = all_data.responseData.sections
     },
 

@@ -8,7 +8,6 @@ Vue.mixin({
 	},
     methods: {
       sayIt(name) {
-        console.log(`Hello dear ${name}`)
       }
     }
   })

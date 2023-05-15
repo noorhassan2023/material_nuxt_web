@@ -11,5 +11,6 @@ import Layout from '@/layouts/main/index.vue'
 export default {
   name: 'Blog',
   components: { singleBlog, Layout },
+  
 }
 </script>
