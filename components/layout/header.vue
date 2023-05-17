@@ -41,7 +41,7 @@
                       >
                     </li>
                     <li class="nav-item">
-                      <NuxtLink :to="localePath('/contact')" class="nav-link">{{
+                      <NuxtLink :to="localePath('/contact-us')" class="nav-link">{{
                         $t('main_page.contact')
                       }}</NuxtLink>
                     </li>
