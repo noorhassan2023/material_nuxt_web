@@ -5,7 +5,7 @@
         <div class="row">
           <div class="cl-md-12">
             <h3 style="color: #8b8b8b">
-              Blog <i class="fa-solid fa-angle-right"></i>
+              {{$t('main_page.blogs')}}  <i :class="$i18n.locale == 'en' ? 'fa-solid fa-angle-right' : 'fa-solid fa-angle-left'"></i>
               <span style="color: #012cda">{{ blog.blogDetail?.vTitle }}</span>
             </h3>
           </div>
@@ -27,10 +27,10 @@
                 </div>
               </div>
               <div class="padding-img col-md-8">
-                <div class="card-body">
+                <div :class="$i18n.locale == 'en' ? 'card-body text-left' : 'card-body text-right'">
                   <h5 class="card-title">{{ blog.blogDetail?.vTitle }}</h5>
                   <p class="mb-3">
-                    Posted on {{ blog.blogDetail?.created_at }}
+                    {{ $t('blogs.publish') }}  {{ blog.blogDetail?.created_at }}
                   </p>
                   <p class="card-text" v-html="blog.blogDetail?.txContent"></p>
                   <p

@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="pt-5 pb-5 mt-5 container">
-      <div class="row">
+      <div class="row tow-rtl">
         <div class="cl-md-12">
           <h3 style="color: #012cda">{{ $t('blogs.title') }}</h3>
         </div>
@@ -12,7 +12,6 @@
         <div class="col-md-8">
           <div
             class="card mb-3"
-            style="height: 310px"
             v-for="(blog, i) in blogs.data"
             :key="i"
           >
@@ -26,7 +25,7 @@
                 />
               </div>
               <div class="col-md-8">
-                <div class="card-body">
+                <div  :class="$i18n.locale == 'en' ? 'card-body text-left' : 'card-body text-right'">
                   <h5 class="card-title pt-3 pb-3">
                     {{ blog.vTitle }}
                   </h5>
@@ -36,21 +35,23 @@
                   </p>
                   <p
                     class="card-text pb-4 blog-content"
-                    v-html="blog.txContent"
-                  ></p>
+                    v-html="blog.txContent.substring(0,180)+'..'"
+                  > </p>
+				  
                   <nuxt-link
                     href="#"
                     clnuxt-linkss="card-text"
-                    :to="`/blogs/${blog.slug}`"
+                    :to="localePath(`/blogs/${blog.slug}`)"
                     ><span class="text-muted"
                       >{{ $t('blogs.read_more') }}
                     </span>
                   </nuxt-link>
-                  <i class="fa-solid fa-angle-right"></i>
+                  <i :class="$i18n.locale == 'en' ? 'fa-solid fa-angle-right' : 'fa-solid fa-angle-left'"></i>
                 </div>
               </div>
             </div>
           </div>
+
           <div class="w-100">
             <div class="mx-auto row mt-2">
               <b-pagination
@@ -99,10 +100,15 @@
                               />
                             </div>
                             <div class="col-md-8">
-                              <div class="card-body">
-                                <h6 class="card-title">
+                              <div :class="$i18n.locale == 'en' ? 'card-body text-left' : 'card-body text-right'">
+                               <nuxt-link
+								href="#"
+								clnuxt-linkss="card-text"
+								:to="localePath(`/blogs/${pop_blog.slug}`)"
+								>
+							    <h6 class="card-title">
                                   {{ pop_blog.vTitle }}
-                                </h6>
+                                </h6></nuxt-link>
                                 <p class="mb-3">
                                   {{ pop_blog.created_at }}
                                 </p>
@@ -130,9 +136,14 @@
                             </div>
                             <div class="col-md-8">
                               <div class="card-body">
+								<nuxt-link
+									href="#"
+									clnuxt-linkss="card-text"
+									:to="localePath(`/blogs/${trend_blog.slug}`)"
+									>
                                 <h6 class="card-title">
                                   {{ trend_blog.vTitle }}
-                                </h6>
+                                </h6></nuxt-link>
                                 <p class="mb-3">
                                   {{ trend_blog.created_at }}
                                 </p>
