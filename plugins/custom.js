@@ -4,11 +4,12 @@ Vue.mixin({
 	filters: {
 		strippedContent: function(string) {
 			   return string.replace(/<\/?[^>]+>/ig, " "); 
-		} 
+		}
 	},
     methods: {
-      sayIt(name) {
-      }
+		messageWithoutSpaces(message) {
+			return message.replace(/\s/g, '');
+        }
     }
   })
 

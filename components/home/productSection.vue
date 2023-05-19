@@ -33,7 +33,7 @@
               >
                 <div class="card-body doctor text-center">
 
-			  <NuxtLink :to="localePath('/products/'+product.biProductId)"  class="a-edit card-a">
+			  <NuxtLink :to="localePath('/products/'+product.biProductId+ '?' +messageWithoutSpaces(product.vProductName))"  class="a-edit card-a">
                     <img
                       :src="product.vProductImage"
                       :alt="product.vProductName"
