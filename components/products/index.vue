@@ -6,12 +6,12 @@
         id="product-list"
       >
         <div
-          class="col-md-3 pt-3"
+          class="col-6 card-mar col-md-3"
           v-for="item in productList.productList"
           :key="item.id"
         >
-          <div class="shadow item1 card">
-            <NuxtLink :to="localePath('/products/' + item.biProductId)">
+          <div class=" shadow card-img doctor text-center">
+            <NuxtLink :to="localePath('/products/' + item.biProductId)" class=" card-a">
               <div class="card-body doctor">
                 <img
                   :src="item.vProductImage"
@@ -125,5 +125,8 @@ div.shadow.item1.card {
 .card-a {
   width: 100%;
   text-decoration: none;
+}
+.card-mar{
+	margin-bottom: 30px;
 }
 </style>
