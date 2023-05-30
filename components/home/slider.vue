@@ -11,8 +11,7 @@
                 : 'text-right banner-content'
             "
           >
-            <h2 class="text-white">{{ $t('main_page.slogan') }}</h2>
-            <h2 class="text-white pb-3">{{ $t('main_page.slogan_sub') }}</h2>
+            <h2 class="text-white">{{ settingObj?.vSolgan }}</h2>
 
             <div class="row">
               <div class="col-md-6">
@@ -21,7 +20,7 @@
                     <div class="location1 d-flex">
                       <span class="subheading" style="margin-right: 10px">
                         <a
-                          href="https://apps.apple.com/us/app/%D9%85%D8%AA%D9%8A%D8%B1%D9%8A%D8%A7%D9%84/id1626095299"
+                          :href="settingObj?.app_store"
                           target="_blank"
                         >
                           <img
@@ -33,7 +32,7 @@
                       </span>
                       <span class="mb-3 subheading" style="margin-right: 10px">
                         <a
-                          href="https://play.google.com/store/apps/details?id=com.material.customer"
+                          :href="settingObj?.google_play"
                           target="_blank"
                         >
                           <img
@@ -50,12 +49,22 @@
           </div>
         </div>
         <div class="col-md-6">
-          <img class="hero" src="~/assets/img/Rectangle_51.png" alt="" />
+          <img class="hero" :src="settingObj && settingObj.vImage != '' ? settingObj.vImage : require('~/assets/img/Rectangle_51.png') " alt="" />
         </div>
       </div>
     </div>
   </section>
 </template>
+
+<script>
+export default {	
+  computed:{
+   settingObj() {
+	   return this.$store.state.setting.allsetting;
+    },
+  },
+}
+</script>
 <style scoped>
 @media only screen and (max-width: 400px) {
   .banner-content {
@@ -63,3 +72,4 @@
   }
 }
 </style>
+

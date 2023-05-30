@@ -55,7 +55,8 @@ export default {
   },
   created() {
     this.getData()
-    this.getSectionData()
+    this.getSectionData();
+	
   },
   mounted() {
     //setting locale

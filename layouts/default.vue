@@ -2,7 +2,7 @@
   <div :style="$i18n.locale == 'en' ? 'direction: ltr' : 'direction: rtl'">
     <Header />
     <nuxt />
-    <Footer />
+    <Footer :settingObj="settingObj" />
   </div>
 </template>
 
@@ -13,12 +13,23 @@ import Footer from '@/components/layout/footer.vue'
 export default {
   name: 'Layout',
   components: { Header, Footer },
-  beforeCreate() {
-    //setting the api token
-    this.$axios.defaults.headers.common.Authorization = process.env.api_token
-    this.$axios.defaults.headers.common.Lang = this.$i18n.locale
+  computed:{
+   settingObj() {
+	   return this.$store.state.setting.allsetting;
+    },
   },
-  mounted() {},
+  methods: {
+      getSettingData(){
+		this.$store.dispatch('setting/fetchSetting').then((data) => {
+	 		console.log(data);
+         })
+         .catch((e) => {
+         })
+	  }
+  },
+  mounted() {
+	  this.getSettingData();
+  },
 }
 </script>
 <style>

@@ -14,7 +14,7 @@
           <div class="item">
             <div class="doctor text-center">
               <div class="custom_btn text-center mx-auto" style="padding: 4rem !important">
-                {{ $t("about.content") }}
+                <p v-html="settingObj?.tAboutContent"></p>
               </div>
             </div>
           </div>
@@ -38,6 +38,10 @@ export default {
         autoplay: true,
       },
     }
+  },computed:{
+   settingObj() {
+	   return this.$store.state.setting.allsetting;
+    },
   },
 }
 </script>
