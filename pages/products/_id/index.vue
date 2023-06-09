@@ -24,9 +24,8 @@
               "
             >
               <h1 class="mb-4 product-color">
-                <!-- {{ singleProduct.vProductName }}
-                {{ singleProduct.vProductUnit }} -->
-                {{ title_alt }}
+                {{ singleProduct.vProductName }}
+                {{ singleProduct.vProductUnit }}
               </h1>
               <h2 class="mb-4">
                 <s
@@ -94,79 +93,63 @@
 
 
 <script>
-import Product_API from '@/services/apis/product_api'
 
 export default {
+   async asyncData({ store ,params}) {
+        // fetch data from API
+      // try {
+            const carDetails = await store.dispatch('products/fetchProduct', params.id);
+			console.log(carDetails);
+			if (carDetails){
+			   return {carDetails};
+			}
+      // } catch (error) {
+            // Redirect to error page or 404 depending on server response
+    // }
+    },	
   head() {
     return {
-      meta: [
-        {
-          name: 'description',
-          content: this.title,
-        },
-      ],
+      title: this.carDetails.vProductName,
+            meta: [
+                { hid: 'og-title', name : 'og:title',property: 'og:title', content: this.carDetails?.vProductName },
+				{ hid: 'og-title', name : 'title', content: this.carDetails?.vProductName },
+				{ hid: 'og-description', name : 'og:description', property: 'og:description',content: this.carDetails?.txProductDescription },
+				{ hid: 'description', name : 'description', content: this.carDetails?.txProductDescription },
+				{ hid: 'og-image', name : 'og:image', property: 'og:image',content: this.carDetails?.vProductImage },
+                { hid: 'keywords', name: 'keywords', content: this.$t("meta.keywords") },
+            ],
     }
-  },
+  },	
   data() {
     return {
-      singleProduct: Object,
-      isLoaded: false,
-      isExist: true,
-      title: 'hello',
     }
   },
+  computed:{
+	singleProduct(){
+		return  this.$store.state.products.productDetail;
 
-  watch: {
-    singleProduct: {
-      handler: function (val) {
-        //  this.$meta.set('description', 'My page description')
-        this.updateMeta('help')
-      },
-      deep: true,
-    },
-  },
-  computed: {
-    meta_title() {
-      return {
-        hid: 'description',
-        name: 'description',
-        content: this.title,
-      }
-    },
-    title_alt() {
-      return this.singleProduct?.vProductName
-    },
+	},
+	isLoaded(){
+		return this.$store.state.products.isLoading;
+	},
+	isExist(){
+		return this.$store.state.products.isLoading;
+	}
   },
   methods: {
-    async getSingleProduct() {
-      const productId = this.$route.params?.id
-      const res = await Product_API.getProductDetail(productId)
-      this.isExist = res.data.responseCode == 200 ? true : false
-      if (this.isExist)
-        this.singleProduct = res.data.responseData?.productDetails
-		this.title = "ddddddddddddddddddddddd"
-      setTimeout(()=>{this.$nuxt.$forceUpdate()},1000);
-      this.isLoaded = true
-    },
-    updateMeta(title, description) {
-      let meta_title = this.$nuxt.$options.head.meta.filter((item) => {
-        return item.name === 'description'
-      })
-
-      let index = this.$nuxt.$options.head.meta.indexOf(meta_title[0])
-      this.$nuxt.$options.head.meta.push({
-        hid: 'description',
-        name: 'description',
-        content: 'New meta description',
-      })
-    },
-  },
-  created() {
-    this.getSingleProduct()
-  },
-  // async asyncData({ params, store }) {
-  //   this.getSingleProduct()
-  // },
+    // async getSingleProduct() {
+    //   const productId = this.$route.params?.id
+    //   const res = await Product_API.getProductDetail(productId)
+    //   this.isExist = res.data.responseCode == 200 ? true : false
+    //   if (this.isExist)
+    //     this.singleProduct = res.data.responseData?.productDetails
+	//   this.$nuxt.$forceUpdate()
+    //   this.isLoaded = true
+    // },
+   },
+//    created() {
+//      this.getSingleProduct()
+//    },
 }
 </script>
 
