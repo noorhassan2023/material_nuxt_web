@@ -107,7 +107,7 @@ export default {
 //             // Redirect to error page or 404 depending on server response
 //     // }
 //     },	
-  head() {
+  head: () => {
     return {
       title: "fffffffffffff",//this.carDetails.vProductName,
 	   meta: [
