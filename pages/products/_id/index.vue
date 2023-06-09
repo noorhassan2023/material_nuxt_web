@@ -93,29 +93,63 @@
 
 
 <script>
-import Product_API from '@/services/apis/product_api'
 
 export default {
+
+   async asyncData({ store ,params}) {
+        // fetch data from API
+       try {
+            const carDetails = await store.dispatch('products/fetchProduct', params.id);
+			if (carDetails){
+			   return {carDetails};
+			}
+       } catch (error) {
+            // Redirect to error page or 404 depending on server response
+     }
+    },	
+  head() {
+    return {
+      title: this.carDetails.vProductName,
+            meta: [
+                { hid: 'og-title', name : 'og:title',property: 'og:title', content: this.carDetails?.vProductName },
+				{ hid: 'og-title', name : 'title', content: this.carDetails?.vProductName },
+				{ hid: 'og-description', name : 'og:description', property: 'og:description',content: this.carDetails?.txProductDescription },
+				{ hid: 'description', name : 'description', content: this.carDetails?.txProductDescription },
+				{ hid: 'og-image', name : 'og:image', property: 'og:image',content: this.carDetails?.vProductImage },
+                { hid: 'keywords', name: 'keywords', content: this.$t("meta.keywords") },
+            ],
+    }
+  },	
   data() {
     return {
-      singleProduct: Object,
-      isLoaded: false,
-      isExist: true,
     }
   },
+  computed:{
+	singleProduct(){
+		return  this.$store.state.products.productDetail;
+
+	},
+	isLoaded(){
+		return this.$store.state.products.isLoading;
+	},
+	isExist(){
+		return this.$store.state.products.isLoading;
+	}
+  },
   methods: {
-    async getSingleProduct() {
-      const productId = this.$route.params?.id
-      const res = await Product_API.getProductDetail(productId)
-      this.isExist = res.data.responseCode == 200 ? true : false
-      if (this.isExist)
-        this.singleProduct = res.data.responseData?.productDetails
-      this.isLoaded = true
-    },
-  },
-  created() {
-    this.getSingleProduct()
-  },
+    // async getSingleProduct() {
+    //   const productId = this.$route.params?.id
+    //   const res = await Product_API.getProductDetail(productId)
+    //   this.isExist = res.data.responseCode == 200 ? true : false
+    //   if (this.isExist)
+    //     this.singleProduct = res.data.responseData?.productDetails
+	//   this.$nuxt.$forceUpdate()
+    //   this.isLoaded = true
+    // },
+   },
+//    created() {
+//      this.getSingleProduct()
+//    },
 }
 </script>
 

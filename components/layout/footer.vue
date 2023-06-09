@@ -79,25 +79,37 @@
                     <li>
                       <a
                         href="#"
-                        @click="goToLink(settingObj.twitterLink)"
+                        @click="
+                          goToLink(
+                            'https://twitter.com/materialsa_?s=21&t=GxMuAO3PZCfQbp-f5gpeQg'
+                          )
+                        "
                         title="twitter"
                         ><i class="fab fa-twitter"></i
                       ></a>
                     </li>
 
-                    <li  >
+                    <li>
                       <a
                         href="#"
-                        @click="goToLink(settingObj.instagramLink)"
+                        @click="
+                          goToLink(
+                            'https://instagram.com/materialsa_?igshid=YmMyMTA2M2Y='
+                          )
+                        "
                         target="_blank"
                         title="instagram"
                         ><i class="fab fa-instagram"></i
                       ></a>
                     </li>
-                    <li >
+                    <li>
                       <a
                         href="#"
-                        @click="goToLink(settingObj.instagramLink)"
+                        @click="
+                          goToLink(
+                            'https://www.linkedin.com/company/materialsa/'
+                          )
+                        "
                         target="_blank"
                         title="linkedin-in"
                         ><i class="fab fa-linkedin-in"></i
@@ -115,7 +127,6 @@
 </template>
 <script>
 export default {
-   props: { settingObj: Object },
   methods: {
     goToLink(link) {
       window.open(link, '_blank')

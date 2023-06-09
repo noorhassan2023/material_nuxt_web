@@ -12,32 +12,18 @@ import HomeSlider from '@/components/home/slider.vue'
 import HomeBanner from '@/components/home/homeBanner.vue'
 import ProductSection from '@/components/home/productSection.vue'
 import HOME_API from '@/services/apis/home_api'
+import seoMeta from '@/services/seoMeta.js'
 
 export default {
   components: { HomeSlider, HomeBanner, ProductSection },
-  head() {
-    return this.headers_data
-  },
+   head: (app) => {
+      return  seoMeta.renderMeta('default',app?._i18n?.locale)
+   },
   data() {
     return {
       categories: [],
       new_sections: [],
     }
-  },
-  computed: {
-    headers_data() {
-      return {
-        title: this.$t('main_page.material'),
-        meta: [
-          { charset: 'utf-8' },
-          { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-          {
-            name: "keywords",
-            content: this.$t("meta.keywords")
-          },
-        ],
-      }
-    },
   },
   methods: {
     async getData() {
@@ -55,8 +41,7 @@ export default {
   },
   created() {
     this.getData()
-    this.getSectionData();
-	
+    this.getSectionData()
   },
   mounted() {
     //setting locale

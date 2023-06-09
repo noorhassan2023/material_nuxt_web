@@ -14,7 +14,7 @@
           <div class="item">
             <div class="doctor text-center">
               <div class="custom_btn text-center mx-auto" style="padding: 4rem !important">
-                <p v-html="settingObj?.tAboutContent"></p>
+                {{ $t("about.content") }}
               </div>
             </div>
           </div>
@@ -25,6 +25,8 @@
 </template>
 
 <script>
+import seoMeta from '@/services/seoMeta.js'
+
 export default {
   data() {
     return {
@@ -38,11 +40,10 @@ export default {
         autoplay: true,
       },
     }
-  },computed:{
-   settingObj() {
-	   return this.$store.state.setting.allsetting;
-    },
   },
+  head: (app) => {
+    return  seoMeta.renderMeta('default',app?._i18n?.locale)
+ },
 }
 </script>
 <style scoped>
