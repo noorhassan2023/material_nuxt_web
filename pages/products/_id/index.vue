@@ -95,18 +95,18 @@
 <script>
 
 export default {
-   async asyncData({ store ,params}) {
-        // fetch data from API
-      // try {
-            const carDetails = await store.dispatch('products/fetchProduct', params.id);
-			console.log(carDetails);
-			if (carDetails){
-			   return {carDetails};
-			}
-      // } catch (error) {
-            // Redirect to error page or 404 depending on server response
-    // }
-    },	
+//    async asyncData({ store ,params}) {
+//         // fetch data from API
+//       // try {
+//             const carDetails = await store.dispatch('products/fetchProduct', params.id);
+// 			console.log(carDetails);
+// 			if (carDetails){
+// 			   return {carDetails};
+// 			}
+//       // } catch (error) {
+//             // Redirect to error page or 404 depending on server response
+//     // }
+//     },	
   head() {
     return {
       title: "fffffffffffff",//this.carDetails.vProductName,
