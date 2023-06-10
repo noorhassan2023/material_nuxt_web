@@ -108,9 +108,16 @@ export default {
 //             // Redirect to error page or 404 depending on server response
 //     // }
      },	
-   head: (app) => {
-		return  seoMeta.renderMeta('default',app?._i18n?.locale)
-  },
+  head: {
+		title: 'My title',
+		meta: [
+			{
+				hid: 'description',
+				name: 'description',
+				content: 'My description',
+			},
+		],
+	},
   data() {
     return {
     }
