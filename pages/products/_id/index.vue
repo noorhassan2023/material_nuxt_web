@@ -93,7 +93,7 @@
 
 
 <script>
-
+import seoMeta from '@/services/seoMeta.js'
 export default {
 //    async asyncData({ store ,params}) {
 //         // fetch data from API
@@ -103,50 +103,14 @@ export default {
 // 			if (carDetails){
 // 			   return {carDetails};
 // 			}
-//       // } catch (error) {
+//     
+  // } catch (error) {
 //             // Redirect to error page or 404 depending on server response
 //     // }
 //     },	
-  head: () => {
-    return {
-      title: "fffffffffffff",//this.carDetails.vProductName,
-	   meta: [
-      {
-        hid: 'description',
-        name: 'description',
-        content: "data.description",
-      },
-      {
-        hid: 'keywords',
-        name: 'keywords',
-        content: "data.keywords",
-      },
-      {
-        hid: 'og:image',
-        name: 'og:image',
-        content: "data.image",
-      },
-      {
-        hid: 'og:title',
-        name: 'og:title',
-        content: "data.title",
-      },
-      {
-        hid: 'og:description',
-        name: 'og:description',
-        content: "data.description",
-      },
-    ],
-            // meta: [
-            //     { hid: 'og-title', name : 'og:title',property: 'og:title', content: this.carDetails?.vProductName },
-			// 	{ hid: 'og-title', name : 'title', content: this.carDetails?.vProductName },
-			// 	{ hid: 'og-description', name : 'og:description', property: 'og:description',content: this.carDetails?.txProductDescription },
-			// 	{ hid: 'description', name : 'description', content: this.carDetails?.txProductDescription },
-			// 	{ hid: 'og-image', name : 'og:image', property: 'og:image',content: this.carDetails?.vProductImage },
-            //     { hid: 'keywords', name: 'keywords', content: this.$t("meta.keywords") },
-            // ],
-    }
-  },	
+   head: (app) => {
+		return  seoMeta.renderMeta('default',app?._i18n?.locale)
+   },
   data() {
     return {
     }
