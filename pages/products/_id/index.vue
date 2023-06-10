@@ -147,9 +147,11 @@ export default {
     //   this.isLoaded = true
     // },
    },
-//    created() {
-//      this.getSingleProduct()
-//    },
+   created() {
+      //this.getSingleProduct()
+	        setTimeout(()=>{this.$nuxt.$forceUpdate()},1000);
+
+   },
 }
 </script>
 
