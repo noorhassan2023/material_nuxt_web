@@ -108,7 +108,8 @@ export default {
 //             // Redirect to error page or 404 depending on server response
 //     // }
      },	
-  head: {
+  head() {
+      return {
 		title: 'My title',
 		meta: [
 			{
@@ -117,6 +118,7 @@ export default {
 				content: 'My description',
 			},
 		],
+	  }
 	},
   data() {
     return {
