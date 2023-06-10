@@ -110,7 +110,7 @@ export default {
      },	
   head() {
       return {
-		title: 'My title',
+		title: 'My title5',
 		meta: [
 			{
 				hid: 'description',
