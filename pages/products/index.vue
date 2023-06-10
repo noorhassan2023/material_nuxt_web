@@ -26,7 +26,7 @@ export default {
   components: { Products, ProductFilter },
   data() {
     return {
-      productList: [],
+      productList: Object,
       searchVal: '',
       isLoaded: false,
     }

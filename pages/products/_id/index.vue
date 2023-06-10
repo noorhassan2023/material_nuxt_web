@@ -95,22 +95,22 @@
 <script>
 import seoMeta from '@/services/seoMeta.js'
 export default {
-//    async asyncData({ store ,params}) {
+   async asyncData({ store ,params}) {
 //         // fetch data from API
-//       // try {
-//             const carDetails = await store.dispatch('products/fetchProduct', params.id);
-// 			console.log(carDetails);
-// 			if (carDetails){
-// 			   return {carDetails};
-// 			}
+       // try {
+             const carDetails = await store.dispatch('products/fetchProduct', params.id);
+			console.log(carDetails);
+ 			if (carDetails){
+ 			   return {carDetails};
+ 			}
 //     
   // } catch (error) {
 //             // Redirect to error page or 404 depending on server response
 //     // }
-//     },	
+     },	
    head: (app) => {
 		return  seoMeta.renderMeta('default',app?._i18n?.locale)
-   },
+  },
   data() {
     return {
     }
