@@ -93,7 +93,7 @@
 
 
 <script>
-import seoMeta from '@/services/seoMeta.js'
+// import seoMeta from '@/services/seoMeta.js'
 export default {
    async asyncData({ store ,params}) {
 //         // fetch data from API
