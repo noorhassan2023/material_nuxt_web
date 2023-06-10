@@ -12,7 +12,12 @@ export default {
     title: 'Material',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+		{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
+	  {
+        hid: 'description',
+        name: 'description',
+        content: "material",
+      },
       {name:'google-site-verification', content:'pP3gilFAJXRkTCnRwZjSmm7RFgYyiaFPHEVpK_qgYMo'},
     ],
     link: [{ rel: 'icon', type: 'image/png', href: '/icon.png' }],
