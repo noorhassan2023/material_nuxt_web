@@ -93,21 +93,23 @@
 
 
 <script>
+import Product_API from '@/services/apis/product_api'
+
 // import seoMeta from '@/services/seoMeta.js'
 export default {
-   async asyncData({ store ,params}) {
-//         // fetch data from API
-       // try {
-             const carDetails = await store.dispatch('products/fetchProduct', params.id);
-			console.log(carDetails);
- 			if (carDetails){
- 			   return {carDetails};
- 			}
-//     
-  // } catch (error) {
-//             // Redirect to error page or 404 depending on server response
-//     // }
-     },	
+//    async asyncData({ store ,params}) {
+// //         // fetch data from API
+//        // try {
+//              const carDetails = await store.dispatch('products/fetchProduct', params.id);
+// 			console.log(carDetails);
+//  			if (carDetails){
+//  			   return {carDetails};
+//  			}
+// //     
+//   // } catch (error) {
+// //             // Redirect to error page or 404 depending on server response
+// //     // }
+//      },	
   head() {
       return {
 		title: 'My title5',
@@ -115,40 +117,45 @@ export default {
 			{
 				hid: 'description',
 				name: 'description',
-				content: 'My description',
+				content: 'ffffffffffffffffffff',//this.$store.state.products.productDetail?.vProductName,
 			},
 		],
 	  }
 	},
   data() {
     return {
+		singleProduct: Object,
+		isLoaded: false,
+		isExist: false,
+
     }
   },
-  computed:{
-	singleProduct(){
-		return  this.$store.state.products.productDetail;
+//   computed:{
+// 	singleProduct(){
+// 		return  this.$store.state.products.productDetail;
 
-	},
-	isLoaded(){
-		return this.$store.state.products.isLoading;
-	},
-	isExist(){
-		return this.$store.state.products.isLoading;
-	}
-  },
+// 	},
+// 	isLoaded(){
+// 		return this.$store.state.products.isLoading;
+// 	},
+// 	isExist(){
+// 		return this.$store.state.products.isLoading;
+// 	}
+//   },
   methods: {
-    // async getSingleProduct() {
-    //   const productId = this.$route.params?.id
-    //   const res = await Product_API.getProductDetail(productId)
-    //   this.isExist = res.data.responseCode == 200 ? true : false
-    //   if (this.isExist)
-    //     this.singleProduct = res.data.responseData?.productDetails
-	//   this.$nuxt.$forceUpdate()
-    //   this.isLoaded = true
-    // },
+     async getSingleProduct() {
+       const productId = this.$route.params?.id
+	   const res = await this.$store.dispatch('products/fetchProduct', productId);
+      //const res = await Product_API.getProductDetail(productId)
+      this.isExist = res.data.responseCode == 200 ? true : false
+      if (this.isExist)
+        this.singleProduct = res.data.responseData?.productDetails
+	   this.$nuxt.$forceUpdate()
+       this.isLoaded = true
+     },
    },
    created() {
-      //this.getSingleProduct()
+      this.getSingleProduct()
 	        setTimeout(()=>{this.$nuxt.$forceUpdate()},1000);
 
    },

@@ -8,7 +8,7 @@ const actions = {
 		    commit('SET_Loading', isExist);
 		const productDetail = data.data.responseData?.productDetails;
 			commit('SET_PRODUCT_DATA', productDetail);
-		  return  productDetail ;	
+		  return  data ;	
 
 	}
 
