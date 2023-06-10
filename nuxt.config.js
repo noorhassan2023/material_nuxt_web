@@ -3,6 +3,11 @@ export default {
   target: 'static',
   ssr: true,
 
+	generate: {
+		routes: () => {
+			return dynamicRoutes.map(route => `/products/${route}`)
+		}
+	},
   env: {
     api_token: "Bearer 3711|8EF4wAHBiYaT6kayfcyDAgpL0FCAZkCsNSUFxUp4"
   },
