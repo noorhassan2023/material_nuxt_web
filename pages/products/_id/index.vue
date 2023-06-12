@@ -93,72 +93,63 @@
 
 
 <script>
-import Product_API from '@/services/apis/product_api'
 
-// import seoMeta from '@/services/seoMeta.js'
 export default {
-//    async asyncData({ store ,params}) {
-// //         // fetch data from API
-//        // try {
-//              const carDetails = await store.dispatch('products/fetchProduct', params.id);
-// 			console.log(carDetails);
-//  			if (carDetails){
-//  			   return {carDetails};
-//  			}
-// //     
-//   // } catch (error) {
-// //             // Redirect to error page or 404 depending on server response
-// //     // }
-//      },	
+
+   async asyncData({ store ,params}) {
+        // fetch data from API
+       try {
+            const carDetails = await store.dispatch('products/fetchProduct', params.id);
+			if (carDetails){
+			   return {carDetails};
+			}
+       } catch (error) {
+            // Redirect to error page or 404 depending on server response
+     }
+    },	
   head() {
-      return {
-		title: 'My title5',
-		meta: [
-			{
-				vmid: 'description',
-				name: 'description',
-				content: 'ffffffffffffffffffff',//this.$store.state.products.productDetail?.vProductName,
-			},
-		],
-	  }
-	},
+    return {
+      title: this.carDetails.vProductName,
+            meta: [
+                { hid: 'og:title', name : 'og:title',property: 'og:title', content: this.carDetails?.vProductName },
+				{ hid: 'title', name : 'title', content: this.carDetails?.vProductName },
+				{ hid: 'og:description', name : 'og:description', property: 'og:description',content: this.carDetails?.txProductDescription },
+				{ hid: 'description', name : 'description', content: this.carDetails?.txProductDescription },
+				{ hid: 'og:image', name : 'og:image', property: 'og:image',content: this.carDetails?.vProductImage },
+                { hid: 'keywords', name: 'keywords', content: this.$t("meta.keywords") },
+            ],
+    }
+  },	
   data() {
     return {
-		singleProduct: Object,
-		isLoaded: false,
-		isExist: false,
-
     }
   },
-//   computed:{
-// 	singleProduct(){
-// 		return  this.$store.state.products.productDetail;
+  computed:{
+	singleProduct(){
+		return  this.$store.state.products.productDetail;
 
-// 	},
-// 	isLoaded(){
-// 		return this.$store.state.products.isLoading;
-// 	},
-// 	isExist(){
-// 		return this.$store.state.products.isLoading;
-// 	}
-//   },
+	},
+	isLoaded(){
+		return this.$store.state.products.isLoading;
+	},
+	isExist(){
+		return this.$store.state.products.isLoading;
+	}
+  },
   methods: {
-     async getSingleProduct() {
-       const productId = this.$route.params?.id
-	   const res = await this.$store.dispatch('products/fetchProduct', productId);
-      //const res = await Product_API.getProductDetail(productId)
-      this.isExist = res.data.responseCode == 200 ? true : false
-      if (this.isExist)
-        this.singleProduct = res.data.responseData?.productDetails
-	   this.$nuxt.$forceUpdate()
-       this.isLoaded = true
-     },
+    // async getSingleProduct() {
+    //   const productId = this.$route.params?.id
+    //   const res = await Product_API.getProductDetail(productId)
+    //   this.isExist = res.data.responseCode == 200 ? true : false
+    //   if (this.isExist)
+    //     this.singleProduct = res.data.responseData?.productDetails
+	//   this.$nuxt.$forceUpdate()
+    //   this.isLoaded = true
+    // },
    },
-   created() {
-      this.getSingleProduct()
-	        setTimeout(()=>{this.$nuxt.$forceUpdate()},1000);
-
-   },
+//    created() {
+//      this.getSingleProduct()
+//    },
 }
 </script>
 

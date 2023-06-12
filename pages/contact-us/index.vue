@@ -67,21 +67,21 @@
 						<i class=" Location fa-solid fa-location-dot"></i>
 						<div :class="$i18n.locale == 'ar'? 'loc': ''" >
 							<h4 class="location-h" > {{ $t('contact.reach-us') }}</h4>
-							<p class="location-p"> الرياض,المعذر الشمالي</p>
+							<p class="location-p">{{settingObj?.address}}</p>
 						</div>
 					</div>
 					<div class="location-drive d-flex">
 						<i class="Location fa-solid fa-envelope"></i>
 						<div class="loc">
-							<h4 class="location-h"> {{ $t('contact.email-us') }}</h4>
-							<p class="location-p"> info@material.sa</p>
+							<h4 class="location-h">  {{ $t('contact.email-us') }}</h4>
+							<p class="location-p"> {{ settingObj?.Email}}</p>
 						</div>
 					</div>
 					<div class="location-drive d-flex padding-loc1">
 						<i class="Location fa-solid fa-mobile-screen-button"></i>
 						<div class="loc ">
-							<h4 class="location-h" > {{ $t('contact.contact-us') }}</h4>
-							<p class="location-p"> +965865959659</p>
+							<h4 class="location-h" >  {{ $t('contact.call-us') }}</h4>
+							<p class="location-p">{{ settingObj?.phone}}</p>
 						</div>
 					</div>
 				</div>
@@ -94,7 +94,6 @@
 
 <script>
 import CONTACT_API from '@/services/apis/contact_api'
-import seoMeta from '@/services/seoMeta.js'
 
 export default {
   data() {
@@ -103,10 +102,12 @@ export default {
       vEmailId: '',
       txDescription: '',
     }
-  }, 
-  head: (app) => {
-    return  seoMeta.renderMeta('default',app?._i18n?.locale)
- },
+  },
+  computed:{
+   settingObj() {
+	   return this.$store.state.setting.allsetting;
+    },
+  },
   methods:{
     async SubmitContact() {
 	try{	
