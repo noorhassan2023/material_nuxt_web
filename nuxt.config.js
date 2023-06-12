@@ -20,9 +20,7 @@ export default {
       },
       {name:'google-site-verification', content:'pP3gilFAJXRkTCnRwZjSmm7RFgYyiaFPHEVpK_qgYMo'},
     ],
-    link: [
-		  {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto&display=swap' },
-		  { rel: 'icon', type: 'image/png', href: '/icon.png' }],
+    link: [{ rel: 'icon', type: 'image/png', href: '/icon.png' }],
     script: [
       {
         src: "https://code.jquery.com/jquery-3.3.1.min.js",
@@ -37,10 +35,7 @@ export default {
         src:
           "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js",
         type: "text/javascript"
-      },{
-        src: 'https://identity.netlify.com/v1/netlify-identity-widget.js',
-        defer: true
-      }
+      },
     ]
   },
 

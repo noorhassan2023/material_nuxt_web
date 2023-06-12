@@ -115,7 +115,7 @@ export default {
 		title: 'My title5',
 		meta: [
 			{
-				hid: 'description',
+				vmid: 'description',
 				name: 'description',
 				content: 'ffffffffffffffffffff',//this.$store.state.products.productDetail?.vProductName,
 			},
