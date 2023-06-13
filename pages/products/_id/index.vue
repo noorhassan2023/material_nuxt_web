@@ -109,7 +109,7 @@ export default {
     },	
   head() {
     return {
-      title: this.carDetails.vProductName,
+      title: "hggggggggggggggggggg",
             meta: [
                 { hid: 'og:title', name : 'og:title',property: 'og:title', content: this.carDetails?.vProductName },
 				{ hid: 'title', name : 'title', content: this.carDetails?.vProductName },
