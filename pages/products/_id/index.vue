@@ -107,9 +107,8 @@ export default {
             // Redirect to error page or 404 depending on server response
      }
     },	
-  head() {
-    return {
-      title: 'fffffffffffffffffffff',
+  head: {
+      title: 'hjyhyuyu',
             meta: [
                 { hid: 'og:title', name : 'og:title',property: 'og:title', content: 'dddddddddd' },
 				{ hid: 'title', name : 'title', content: 'ddddddddddddddddddd' },
@@ -118,7 +117,7 @@ export default {
 				{ hid: 'og:image', name : 'og:image', property: 'og:image',content: 'ghhhhhhhhhhhhhh' },
                 { hid: 'keywords', name: 'keywords', content: this.$t("meta.keywords") },
             ],
-    }
+    
   },	
   data() {
     return {
