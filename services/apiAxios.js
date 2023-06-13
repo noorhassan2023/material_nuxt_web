@@ -18,7 +18,7 @@ const apiAxios = axios.create({
 
 apiAxios.interceptors.request.use((config) => {
   config.headers.Authorization = 'Bearer 3711|8EF4wAHBiYaT6kayfcyDAgpL0FCAZkCsNSUFxUp4';
-  config.headers.Lang = (process.client) ? localStorage.getItem("locale") :'en';
+  config.headers.Lang = localStorage.getItem("locale");
   return config
 });
 

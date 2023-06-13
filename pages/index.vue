@@ -12,18 +12,32 @@ import HomeSlider from '@/components/home/slider.vue'
 import HomeBanner from '@/components/home/homeBanner.vue'
 import ProductSection from '@/components/home/productSection.vue'
 import HOME_API from '@/services/apis/home_api'
-import seoMeta from '@/services/seoMeta.js'
 
 export default {
   components: { HomeSlider, HomeBanner, ProductSection },
-   head: (app) => {
-      return  seoMeta.renderMeta('default',app?._i18n?.locale)
-   },
+  head() {
+    return this.headers_data
+  },
   data() {
     return {
       categories: [],
       new_sections: [],
     }
+  },
+  computed: {
+    headers_data() {
+      return {
+        title: this.$t('main_page.material'),
+        meta: [
+          { name: "keywords",content: this.$t("meta.keywords")},
+		  { name: "title",content: this.$t('main_page.material')},
+		  { name:"og:title" ,property:"og:title",content: this.$t('main_page.material')},
+		  { name: "description",property:"og:description",content: this.$t("meta.home_Page")},
+		  { name: "og:description",property:"og:description",content: this.$t("meta.home_Page")},
+		  { name :"og:image" ,property:"og:image",content : require('~/assets/img/Rectangle_51.png')}
+        ],
+      }
+    },
   },
   methods: {
     async getData() {
@@ -41,7 +55,8 @@ export default {
   },
   created() {
     this.getData()
-    this.getSectionData()
+    this.getSectionData();
+	
   },
   mounted() {
     //setting locale

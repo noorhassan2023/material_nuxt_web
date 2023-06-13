@@ -19,8 +19,6 @@
 import Products from '@/components/products/index.vue'
 import ProductFilter from '@/components/products/filter.vue'
 import Product_API from '@/services/apis/product_api'
-import seoMeta from '@/services/seoMeta.js'
-
 
 export default {
   components: { Products, ProductFilter },
@@ -31,9 +29,6 @@ export default {
       isLoaded: false,
     }
   },
-   head: (app) => {
-		return  seoMeta.renderMeta('default',app?._i18n?.locale)
-   },
   computed: {
     category_id() {
       return this.$route?.query?.category_id

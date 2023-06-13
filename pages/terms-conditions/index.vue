@@ -16,7 +16,6 @@
 
 <script>
 import HOME_API from "@/services/apis/home_api"
-import seoMeta from '@/services/seoMeta.js'
 
 export default {
     data() {
@@ -25,9 +24,6 @@ export default {
 		  pageName:'',	
 		}
    },
-	head: (app) => {
-		return  seoMeta.renderMeta('default',app?._i18n?.locale)
-	},
    methods: {
 		async getData() {
 			const res = await HOME_API.getpages('terms-and-conditions');
