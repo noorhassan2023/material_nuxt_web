@@ -1,7 +1,7 @@
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-  ssr: true,
+  ssr: false,
 
   env: {
     api_token: "Bearer 3711|8EF4wAHBiYaT6kayfcyDAgpL0FCAZkCsNSUFxUp4"
@@ -13,7 +13,6 @@ export default {
     meta: [
         { charset: 'utf-8' },
 		{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
-		{ 'http-equiv': 'Cache-Control', content: 'no-cache, no-store, must-revalidate' }, 
 		{ name: 'format-detection', content: 'telephone=no' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],

@@ -108,7 +108,7 @@ export default {
   //   }
   // },
   metaInfo:{
-    title: 'Page Title'
+    title: 'Page Title111'
   },
   data() {
     return {
