@@ -2,7 +2,6 @@
   <div :style="$i18n.locale == 'en' ? 'direction: ltr' : 'direction: rtl'">
     <Header />
     <nuxt />
-	 <nuxt-child />
     <Footer :settingObj="settingObj" />
   </div>
 </template>
