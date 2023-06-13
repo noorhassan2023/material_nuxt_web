@@ -115,7 +115,7 @@ export default {
 				{ hid: 'og:description', name : 'og:description', property: 'og:description',content: 'fffffffffff' },
 				{ hid: 'description', name : 'description', content: 'ggggggggggggg' },
 				{ hid: 'og:image', name : 'og:image', property: 'og:image',content: 'ghhhhhhhhhhhhhh' },
-                { hid: 'keywords', name: 'keywords', content: this.$t("meta.keywords") },
+                { hid: 'keywords', name: 'keywords', content: "jjjjjjjjjjjjjjjj" },
             ],
     
   },	
