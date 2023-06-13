@@ -109,13 +109,13 @@ export default {
     },	
   head() {
     return {
-      title: this.carDetails.vProductName,
+      title: 'fffffffffffffffffffff',
             meta: [
-                { hid: 'og:title', name : 'og:title',property: 'og:title', content: this.carDetails?.vProductName },
-				{ hid: 'title', name : 'title', content: this.carDetails?.vProductName },
-				{ hid: 'og:description', name : 'og:description', property: 'og:description',content: this.carDetails?.txProductDescription },
-				{ hid: 'description', name : 'description', content: this.carDetails?.txProductDescription },
-				{ hid: 'og:image', name : 'og:image', property: 'og:image',content: this.carDetails?.vProductImage },
+                { hid: 'og:title', name : 'og:title',property: 'og:title', content: 'dddddddddd' },
+				{ hid: 'title', name : 'title', content: 'ddddddddddddddddddd' },
+				{ hid: 'og:description', name : 'og:description', property: 'og:description',content: 'fffffffffff' },
+				{ hid: 'description', name : 'description', content: 'ggggggggggggg' },
+				{ hid: 'og:image', name : 'og:image', property: 'og:image',content: 'ghhhhhhhhhhhhhh' },
                 { hid: 'keywords', name: 'keywords', content: this.$t("meta.keywords") },
             ],
     }
