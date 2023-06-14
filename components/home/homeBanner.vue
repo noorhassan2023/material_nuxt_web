@@ -45,7 +45,7 @@ export default {
         ],
       },
     }
-  }, 
+  },
   methods: {
     filterProduct(category) {
       this.$emit('filtered', category.products)

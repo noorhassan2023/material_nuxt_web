@@ -7,7 +7,8 @@ const actions = {
 		commit('SET_SETTING_DATA', data.data.responseData);
 		return data;
 
-	}
+	},
+
 }
 
 export default actions
