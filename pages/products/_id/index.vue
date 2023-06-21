@@ -107,17 +107,17 @@ export default {
             // Redirect to error page or 404 depending on server response
      }
     },	
-   head() {
+   head:()=> {
 	return {
-      title: this.singleProduct?.vProductName,
-	   meta: [
-                { hid: 'og:title', name : 'og:title',property: 'og:title', content: this.singleProduct?.vProductName },
-				{ hid: 'title', name : 'title', content: this.singleProduct?.vProductName },
-				{ hid: 'og:description', name : 'og:description', property: 'og:description',content: this.singleProduct?.txProductDescription },
-				{ hid: 'description', name : 'description', content: this.singleProduct?.txProductDescription },
-				{ hid: 'og:image', name : 'og:image', property: 'og:image',content: this.singleProduct?.vProductImage },
-                { hid: 'keywords', name: 'keywords', content: this.$t("meta.keywords") },
-            ],
+      title: 'ddddddddddd',//this.singleProduct?.vProductName,
+	//    meta: [
+    //             { hid: 'og:title', name : 'og:title',property: 'og:title', content: this.singleProduct?.vProductName },
+	// 			{ hid: 'title', name : 'title', content: this.singleProduct?.vProductName },
+	// 			{ hid: 'og:description', name : 'og:description', property: 'og:description',content: this.singleProduct?.txProductDescription },
+	// 			{ hid: 'description', name : 'description', content: this.singleProduct?.txProductDescription },
+	// 			{ hid: 'og:image', name : 'og:image', property: 'og:image',content: this.singleProduct?.vProductImage },
+    //             { hid: 'keywords', name: 'keywords', content: this.$t("meta.keywords") },
+    //         ],
 	}
 
   },
