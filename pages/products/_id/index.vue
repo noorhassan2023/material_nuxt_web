@@ -107,7 +107,7 @@ export default {
             // Redirect to error page or 404 depending on server response
      }
     },	
-   metaInfo() {
+   head() {
 	return {
       title: this.singleProduct?.vProductName,
 	   meta: [

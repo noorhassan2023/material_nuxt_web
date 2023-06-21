@@ -48,8 +48,6 @@ export default {
   plugins: [
     { src: '~/plugins/vue-carousel.js', mode: 'client' },
     { src: '~/plugins/custom.js' },
-    { src: '~/plugins/gapi.js' },
-    { src: '~/plugins/vue-meta.js', ssr: true  },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

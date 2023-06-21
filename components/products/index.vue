@@ -91,7 +91,7 @@
 <script>
 export default {
   components: {},
-  props: { productList: Array },
+  props: { productList: Object },
   data() {
     return {
       page: 1,

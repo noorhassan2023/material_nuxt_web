@@ -24,12 +24,12 @@ import seoMeta from '@/services/seoMeta.js'
 
 export default {
   components: { Products, ProductFilter },
-  metaInfo: (app) => {
+  head: (app) => {
 		return  seoMeta.renderMeta('default',app?._i18n?.locale)
   },
   data() {
     return {
-      productList: [],
+      productList: Object,
       searchVal: '',
       isLoaded: false,
     }

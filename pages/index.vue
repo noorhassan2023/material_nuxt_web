@@ -17,7 +17,7 @@ import seoMeta from '@/services/seoMeta.js'
 
 export default {
   components: { HomeSlider, HomeBanner, ProductSection },
-	metaInfo: (app) => {
+	head: (app) => {
 		return  seoMeta.renderMeta('default',app?._i18n?.locale)
 		},
   data() {
