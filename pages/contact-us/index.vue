@@ -94,8 +94,12 @@
 
 <script>
 import CONTACT_API from '@/services/apis/contact_api'
+import seoMeta from '@/services/seoMeta.js'
 
 export default {
+  metaInfo: (app) => {
+	 return  seoMeta.renderMeta('default',app?._i18n?.locale)
+  },
   data() {
     return {
       vName: '',

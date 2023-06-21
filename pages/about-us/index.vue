@@ -1,7 +1,7 @@
 <template>
   <section style="min-height: 50vh !important">
     <h1 class="pb-5 text-center" style="margin-top: 12rem; color: blue">
-      {{$t("main_page.about")}}
+      About us
     </h1>
     <client-only>
       <carousel
@@ -25,7 +25,12 @@
 </template>
 
 <script>
+import seoMeta from '@/services/seoMeta.js'
+
 export default {
+  metaInfo: (app) => {
+	 return  seoMeta.renderMeta('default',app?._i18n?.locale)
+  },
   data() {
     return {
       options: {

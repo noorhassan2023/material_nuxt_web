@@ -14,11 +14,12 @@ import ProductSection from '@/components/home/productSection.vue'
 import HOME_API from '@/services/apis/home_api'
 import seoMeta from '@/services/seoMeta.js'
 
+
 export default {
   components: { HomeSlider, HomeBanner, ProductSection },
-   head: (app) => {
-      return  seoMeta.renderMeta('default',app?._i18n?.locale)
-   },
+	metaInfo: (app) => {
+		return  seoMeta.renderMeta('default',app?._i18n?.locale)
+		},
   data() {
     return {
       categories: [],
@@ -41,7 +42,8 @@ export default {
   },
   created() {
     this.getData()
-    this.getSectionData()
+    this.getSectionData();
+	
   },
   mounted() {
     //setting locale

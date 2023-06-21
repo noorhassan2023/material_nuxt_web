@@ -25,7 +25,7 @@
             >
               <h1 class="mb-4 product-color">
                 {{ singleProduct.vProductName }}
-                {{ singleProduct.vProductUnit }}
+                {{ singleProduct.vProductUnit }} 
               </h1>
               <h2 class="mb-4">
                 <s
@@ -92,43 +92,37 @@
 
 
 
-<script setup>
+<script>
+import Product_API from '@/services/apis/product_api'
 
 export default {
-
-   async asyncData({ store ,params}) {
-        // fetch data from API
-       try {
-            const carDetails = await store.dispatch('products/fetchProduct', params.id);
-			if (carDetails){
-			   return {carDetails};
-			}
-       } catch (error) {
+	async asyncData({ store ,params}) {
+         // fetch data from API
+        try {
+            const singleProduct = await store.dispatch('products/fetchProduct', params.id);
+ 			 if (singleProduct){
+ 			   return {singleProduct};
+ 			}
+        } catch (error) {
             // Redirect to error page or 404 depending on server response
      }
     },	
-  head() {
-    return {
-      title:  this.carDetails?.vProductName,
-            meta: [
-                { hid: 'og:title', name : 'og:title',property: 'og:title', content: this.carDetails?.vProductName },
-				{ hid: 'title', name : 'title', content: this.carDetails?.vProductName },
-				{ hid: 'og:description', name : 'og:description', property: 'og:description',content: this.carDetails?.txProductDescription },
-				{ hid: 'description', name : 'description', content: this.carDetails?.txProductDescription },
-				{ hid: 'og:image', name : 'og:image', property: 'og:image',content: this.carDetails?.vProductImage },
+   metaInfo() {
+	return {
+      title: this.singleProduct?.vProductName,
+	   meta: [
+                { hid: 'og:title', name : 'og:title',property: 'og:title', content: this.singleProduct?.vProductName },
+				{ hid: 'title', name : 'title', content: this.singleProduct?.vProductName },
+				{ hid: 'og:description', name : 'og:description', property: 'og:description',content: this.singleProduct?.txProductDescription },
+				{ hid: 'description', name : 'description', content: this.singleProduct?.txProductDescription },
+				{ hid: 'og:image', name : 'og:image', property: 'og:image',content: this.singleProduct?.vProductImage },
                 { hid: 'keywords', name: 'keywords', content: this.$t("meta.keywords") },
             ],
-    }
-  },	
-  data() {
-    return {
-    }
-  },
-  computed:{
-	singleProduct(){
-		return  this.$store.state.products.productDetail;
+	}
 
-	},
+  },
+  data() {
+  }, computed:{
 	isLoaded(){
 		return this.$store.state.products.isLoading;
 	},
@@ -136,20 +130,7 @@ export default {
 		return this.$store.state.products.isLoading;
 	}
   },
-  methods: {
-    // async getSingleProduct() {
-    //   const productId = this.$route.params?.id
-    //   const res = await Product_API.getProductDetail(productId)
-    //   this.isExist = res.data.responseCode == 200 ? true : false
-    //   if (this.isExist)
-    //     this.singleProduct = res.data.responseData?.productDetails
-	//   this.$nuxt.$forceUpdate()
-    //   this.isLoaded = true
-    // },
-   },
-//    created() {
-//      this.getSingleProduct()
-//    },
+
 }
 </script>
 
