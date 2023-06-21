@@ -15,6 +15,7 @@ export default {
 		{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
 		{ 'http-equiv': 'Cache-Control', content: 'no-cache, no-store, must-revalidate' }, 
 		{ name: 'format-detection', content: 'telephone=no' },
+		{name: 'google-site-verification',content: 'pP3gilFAJXRkTCnRwZjSmm7RFgYyiaFPHEVpK_qgYMo'},
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     script: [

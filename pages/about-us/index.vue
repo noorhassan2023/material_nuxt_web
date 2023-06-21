@@ -1,7 +1,7 @@
 <template>
   <section style="min-height: 50vh !important">
     <h1 class="pb-5 text-center" style="margin-top: 12rem; color: blue">
-      About us
+      {{$t("main_page.about")}}
     </h1>
     <client-only>
       <carousel
