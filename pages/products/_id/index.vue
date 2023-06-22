@@ -112,22 +112,17 @@ export default {
   },
 	async fetch() {
          // fetch data from API
-      //  try {
+        try {
 		  const productId = this.$route.params?.id
-       const res = await Product_API.getProductDetail(productId)
+          const res = await Product_API.getProductDetail(productId)
 	     this.isExist = res.data.responseCode == 200 ? true : false
-      if (this.isExist)
-        this.singleProduct = res.data.responseData?.productDetails
-		this.$nuxt.$forceUpdate()
-		this.isLoaded = true
-          //  const {data} = await store.dispatch('products/fetchProduct',this.$route.params.id);
-			//this.singleProduct = res.data.responseData?.productDetails;
- 			//  if (singleProduct){
-			// 	return {singleProduct: singleProduct}
- 			// }
-        //} catch (error) {
+			if (this.isExist)
+				this.singleProduct = res.data.responseData?.productDetails
+				this.$nuxt.$forceUpdate()
+				this.isLoaded = true
+        } catch (error) {
             // Redirect to error page or 404 depending on server response
-     //}
+      }
     },	
   
   data() {
