@@ -110,28 +110,33 @@ export default {
 	}
 
   },
-	async asyncData({ store ,params}) {
+	async fetch() {
          // fetch data from API
-        try {
-            const singleProduct = await store.dispatch('products/fetchProduct', params.id);
- 			 if (singleProduct){
-				return {singleProduct: singleProduct}
- 			}
-        } catch (error) {
+      //  try {
+		  const productId = this.$route.params?.id
+       const res = await Product_API.getProductDetail(productId)
+	     this.isExist = res.data.responseCode == 200 ? true : false
+      if (this.isExist)
+        this.singleProduct = res.data.responseData?.productDetails
+		this.$nuxt.$forceUpdate()
+		this.isLoaded = true
+          //  const {data} = await store.dispatch('products/fetchProduct',this.$route.params.id);
+			//this.singleProduct = res.data.responseData?.productDetails;
+ 			//  if (singleProduct){
+			// 	return {singleProduct: singleProduct}
+ 			// }
+        //} catch (error) {
             // Redirect to error page or 404 depending on server response
-     }
+     //}
     },	
   
   data() {
-  }, computed:{
-	isLoaded(){
-		return this.$store.state.products.isLoading;
-	},
-	isExist(){
-		return this.$store.state.products.isLoading;
+	return {
+	  singleProduct: Object,
+	  isExist:false,
+	  isLoaded:false,
 	}
   },
-
 }
 </script>
 
