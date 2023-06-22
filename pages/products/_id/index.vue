@@ -96,18 +96,7 @@
 import Product_API from '@/services/apis/product_api'
 
 export default {
-	async asyncData({ store ,params}) {
-         // fetch data from API
-        try {
-            const singleProduct = await store.dispatch('products/fetchProduct', params.id);
- 			 if (singleProduct){
- 			   return {singleProduct};
- 			}
-        } catch (error) {
-            // Redirect to error page or 404 depending on server response
-     }
-    },	
-   head:()=> {
+	 head() {
 	return {
       title: this.singleProduct?.vProductName,
 	   meta: [
@@ -121,6 +110,18 @@ export default {
 	}
 
   },
+	async asyncData({ store ,params}) {
+         // fetch data from API
+        try {
+            const singleProduct = await store.dispatch('products/fetchProduct', params.id);
+ 			 if (singleProduct){
+				return {singleProduct: singleProduct}
+ 			}
+        } catch (error) {
+            // Redirect to error page or 404 depending on server response
+     }
+    },	
+  
   data() {
   }, computed:{
 	isLoaded(){
