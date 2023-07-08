@@ -20,7 +20,9 @@
     "price": "Price",
     "sar": "SAR",
     "error": "We're sorry, the page you requested could not be found.",
-    "go_to_homepage": "Go to homepage"
+    "go_to_homepage": "Go to homepage",
+	"faqs_question":"Frequently Asked Questions",
+	"popular_question":"Popular questions"
   },
   "contact": {
     "name": "Name",
@@ -53,9 +55,6 @@
     "trending": "Trending",
 	"go_to_blogs": "Go To Blogs page",
 	"not_found":"The Blog cannot be found"
-
-
-
   },"meta" :{
 	"home_page":"Local and imported beverages delivery ",
 	"keywords" :"nova sparkling water , nova water 330ml, nova mineral water, nova water online order, order water bottle online, order soft drinks online, order bottled water online, order mineral water online, nova bottled water,buy sparkling water, buy soda online, buy soft drinks online, buy soft drinks online, buy bottled water online, best sparkling water, soda water, mineral water, mineral water, carbonated water, flavor water, black soft drink, sparkling water, nova water, soft drinks"
