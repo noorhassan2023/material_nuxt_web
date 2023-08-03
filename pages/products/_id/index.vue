@@ -94,22 +94,25 @@
 
 <script>
 import Product_API from '@/services/apis/product_api'
-
+import seoMeta from '@/services/seoMeta.js'
 export default {
-	 head() {
-	return {
-      title: this.singleProduct?.vProductName,
-	   meta: [
-                { hid: 'og:title', name : 'og:title',property: 'og:title', content: this.singleProduct?.vProductName },
-				{ hid: 'title', name : 'title', content: this.singleProduct?.vProductName },
-				{ hid: 'og:description', name : 'og:description', property: 'og:description',content: this.singleProduct?.txProductDescription },
-				{ hid: 'description', name : 'description', content: this.singleProduct?.txProductDescription },
-				{ hid: 'og:image', name : 'og:image', property: 'og:image',content: this.singleProduct?.vProductImage },
-                { hid: 'keywords', name: 'keywords', content: this.$t("meta.keywords") },
-            ],
-	}
-
+	head: (app) => {
+		return  seoMeta.renderMeta('default',app?._i18n?.locale)
   },
+// 	 head() {
+// 	return {
+//       title: this.singleProduct?.vProductName,
+// 	   meta: [
+//                 { hid: 'og:title', name : 'og:title',property: 'og:title', content: this.singleProduct?.vProductName },
+// 				{ hid: 'title', name : 'title', content: this.singleProduct?.vProductName },
+// 				{ hid: 'og:description', name : 'og:description', property: 'og:description',content: this.singleProduct?.txProductDescription },
+// 				{ hid: 'description', name : 'description', content: this.singleProduct?.txProductDescription },
+// 				{ hid: 'og:image', name : 'og:image', property: 'og:image',content: this.singleProduct?.vProductImage },
+//                 { hid: 'keywords', name: 'keywords', content: this.$t("meta.keywords") },
+//             ],
+// 	}
+
+//   },
   async asyncData({ $axios ,params }) {
 	console.log("ffffffffffff");
 	// const productId = this.$route.params?.id
