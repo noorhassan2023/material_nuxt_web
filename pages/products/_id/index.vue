@@ -111,6 +111,7 @@ export default {
 
   },
   async asyncData({ $axios ,params }) {
+	console.log("ffffffffffff");
 	// const productId = this.$route.params?.id
     const singleProduct = await $axios.get(`https://app.materiel.sa/api/v3/product/product-details/${params.id}`,
 	   {
