@@ -115,7 +115,6 @@ export default {
         try {
 		  const productId = this.$route.params?.id
           const res = await Product_API.getProductDetail(productId)
-console.log(res);
 	     this.isExist = res.data.responseCode == 200 ? true : false
 			if (this.isExist)
 				this.singleProduct = res.data.responseData?.productDetails
