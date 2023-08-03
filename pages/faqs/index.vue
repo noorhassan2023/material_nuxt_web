@@ -70,4 +70,8 @@ export default {
 .visually-hidden {
   color: black !important;
 }
+h5 > button {
+	background-color:rgba(0,0,0,0);
+	border:none;
+}
 </style>
