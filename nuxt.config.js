@@ -1,6 +1,6 @@
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  target: 'static',
+  target: 'server',
   ssr: true,
 
   env: {
@@ -10,11 +10,30 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'material',
-    meta: [
-        { charset: 'utf-8' },
-		{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
-		{name: 'google-site-verification',content: 'pP3gilFAJXRkTCnRwZjSmm7RFgYyiaFPHEVpK_qgYMo'},
+    // meta: [
+    //     { charset: 'utf-8' },
+	// 	{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
+	// 	{name: 'google-site-verification',content: 'pP3gilFAJXRkTCnRwZjSmm7RFgYyiaFPHEVpK_qgYMo'},
+    // ],
+	   meta: [
+      {
+        charset: 'utf-8',
+      },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1',
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content: '',
+      },
+      {
+        name: 'format-detection',
+        content: 'telephone=no',
+      },
     ],
+	
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     script: [
       {
