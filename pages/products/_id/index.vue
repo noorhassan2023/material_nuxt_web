@@ -110,26 +110,38 @@ export default {
 	}
 
   },
-	async fetch() {
-         // fetch data from API
-        try {
-		  const productId = this.$route.params?.id
-          const res = await Product_API.getProductDetail(productId)
-	     this.isExist = res.data.responseCode == 200 ? true : false
-			if (this.isExist)
-				this.singleProduct = res.data.responseData?.productDetails
-				this.$nuxt.$forceUpdate()
-				this.isLoaded = true
-        } catch (error) {
-            // Redirect to error page or 404 depending on server response
-      }
-    },	
+  async asyncData({ $axios ,params }) {
+	// const productId = this.$route.params?.id
+    const singleProduct = await $axios.get(`https://app.materiel.sa/api/v3/product/product-details/${params.id}`,
+	   {
+			headers: {
+				'Authorization': 'Bearer 32996|lfezrmu2wOYHQWnLkgYc7SdLju2GJGKw3MfOjlG6',
+				'Lang': 'ar'
+			}
+		})
+      .then(res => res.data.responseData?.productDetails)//res.json())
+    return { singleProduct }
+  },
+	// async fetch() {
+    //      // fetch data from API
+    //     try {
+	// 	  const productId = this.$route.params?.id
+    //       const res = await Product_API.getProductDetail(productId)
+	//      this.isExist = res.data.responseCode == 200 ? true : false
+	// 		if (this.isExist)
+	// 			this.singleProduct = res.data.responseData?.productDetails
+	// 			this.$nuxt.$forceUpdate()
+	// 			this.isLoaded = true
+    //     } catch (error) {
+    //         // Redirect to error page or 404 depending on server response
+    //   }
+    // },	
   
   data() {
 	return {
 	  singleProduct: Object,
-	  isExist:false,
-	  isLoaded:false,
+	  isExist:true,
+	  isLoaded:true,
 	}
   },
 }
