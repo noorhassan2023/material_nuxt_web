@@ -82,7 +82,7 @@ export default {
     '@nuxtjs/i18n',
 	  '@nuxtjs/toast',
 	
-	   ['cookie-universal-nuxt', { alias: 'cookiz' }],
+	['cookie-universal-nuxt', { alias: 'cookiz' }],
   ],
 
   //vuetify object instance
