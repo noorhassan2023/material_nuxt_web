@@ -1,7 +1,7 @@
 <template>
   <div :style="$i18n.locale == 'en' ? 'direction: ltr' : 'direction: rtl'">
     <Header />
-    <nuxt />
+    <Nuxt />
     <Footer :settingObj="settingObj" />
   </div>
 </template>
