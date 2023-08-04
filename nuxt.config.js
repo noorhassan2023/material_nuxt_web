@@ -1,14 +1,12 @@
+//import vuetifyOptions from './vuetify.options'
+
 export default {
-  // Target: https://go.nuxtjs.dev/config-target
+  // Global page headers: https://go.nuxtjs.dev/config-head
   target: 'server',
   ssr: true,
-  env: {
-    api_token: "Bearer 3711|8EF4wAHBiYaT6kayfcyDAgpL0FCAZkCsNSUFxUp4"
-  },
 
-  // Global page headers: https://go.nuxtjs.dev/config-head
-  head:{
-  titleTemplate: '%s - Grand Community',
+  head: {
+    titleTemplate: '%s - Grand Community',
     title: 'Grand',
     meta: [
       {
@@ -28,28 +26,72 @@ export default {
         content: 'telephone=no',
       },
     ],
-  
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    script: [
+    link: [
       {
-        src: "https://code.jquery.com/jquery-3.3.1.min.js",
-        type: "text/javascript"
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.png',
       },
-      {
-        src:
-          "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js",
-        type: "text/javascript"
-      },
-      {
-        src:
-          "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js",
-        type: "text/javascript"
-      }
-    ]
+    ],
   },
+  // head() {
 
+  //   // const metaData = getMeta('default', this.$i18n?.locale)
+  //   const lang = this.$i18n?.locale || 'en'
+  //   const defaultSeo = {
+  //     title: {
+  //       ar: ' جراند كومينتي',
+  //       en: 'Grand Community'
+  //     },
+  //     longTitle: {
+  //       ar: 'منصة تجمع العلامات التجارية والمؤثرين في مكان واحد لتحقيق حملات تسويقية مبتكرة!',
+  //       en: "Bring your marketing goals to life with the best influencer marketing campaigns."
+  //     },
+  //     description: {
+  //       ar: 'جراند كومينتي هي المنصة الأولى للتسويق وإدارة الحملات التسويقية من خلال المؤثرين، اشترك الآن مع حملات تسويقية بالتعاون مع المؤثرين المشاهير وابدأ الحملة في 24 ساعة فقط',
+  //       en: "Grand Community, the top influencer marketing and campaign management platform, Grow your business now with persuasive campaigns lead by worldwide celebrities."
+  //     },
+  //     keywords: { ar: 'influencers marketing', en: "influencers marketing" },
+  //     image: 'https://kw.grand-community.com/assets/images/home.png'
+  //   }
 
-  // Global CSS: https://go.nuxtjs.dev/config-css
+  //   return {
+  //     titleTemplate: `%s - ${defaultSeo.title[lang]}`,
+  //     title: defaultSeo.longTitle[lang],
+  //     meta: [
+  //       {
+  //         charset: 'utf-8',
+  //       },
+  //       {
+  //         name: 'viewport',
+  //         content: 'width=device-width, initial-scale=1',
+  //       },
+  //       {
+  //         hid: 'description',
+  //         name: 'description',
+  //         content: defaultSeo.description[lang],
+  //       },
+  //       {
+  //         hid: 'keywords',
+  //         name: 'keywords',
+  //         content: defaultSeo.keywords[lang],
+  //       },
+  //       {
+  //         name: 'format-detection',
+  //         content: 'telephone=no',
+  //       },
+  //     ],
+  //     link: [
+  //       {
+  //         rel: 'icon',
+  //         type: 'image/x-icon',
+  //         href: '/favicon.png',
+  //       },
+  //     ],
+  //   }
+  // },
+
+// Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     "bootstrap/dist/css/bootstrap.min.css",
     "@fortawesome/fontawesome-free/css/all.css",
@@ -63,15 +105,51 @@ export default {
     { src: '~/plugins/custom.js' },
   ],
 
+
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    // https://go.nuxtjs.dev/typescript
+    // https://go.nuxtjs.dev/vuetify
+
+
+   // 'nuxt-gsap-module',
   ],
 
+  pageTransition: {
+    name: 'page',
+    mode: 'out-in',
+    css: false,
+
+    beforeEnter(el) {
+      this.$gsap.set(el, {
+        opacity: 0,
+      })
+    },
+
+    enter(el, done) {
+      this.$gsap.to(el, {
+        opacity: 1,
+        duration: 0.5,
+        ease: 'power2.inOut',
+        onComplete: done,
+      })
+    },
+
+    leave(el, done) {
+      this.$gsap.to(el, {
+        opacity: 0,
+        duration: 0.5,
+        ease: 'power2.inOut',
+        onComplete: done,
+      })
+    },
+  },
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
+
+   modules: [
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
     // https://go.nuxtjs.dev/axios
@@ -84,83 +162,73 @@ export default {
 	
 	['cookie-universal-nuxt', { alias: 'cookiz' }],
   ],
+  
 
-  //vuetify object instance
-  // vuetify: {
-  //   customVariables: ['~/assets/variables.scss'],
-  //   components: {
-  //     VSkeletonLoader
-  //   }
-  // },
-
-
-  //toast object instance
-  toast: {
-    position: 'top-center',
-    register: [ // Register custom toasts
-      {
-        name: 'my-error',
-        message: 'Oops...Something went wrong',
-        options: {
-          type: 'error'
-        }
-      }
-    ]
+  // Axios module configuration
+  axios: {
+    // proxy: true,
+    withCredentials: true,
+    baseURL: process.env.API_URL,
   },
+  // -------------------------
 
-  //i18n object instance
 
-  i18n:
-  {
+  i18n: {
+    strategy: 'prefix',
+    defaultLocale: 'en',
+    defaultDirection: 'ltr',
     lazy: true,
     langDir: 'locales/',
-    strategy: "prefix_except_default",
     locales: [
       {
         code: 'en',
         iso: 'en-US',
         file: 'en.json',
-        name: 'English',
         dir: 'ltr',
       },
       {
         code: 'ar',
-        iso: 'ar-SA',
+        iso: 'ar-EG',
         file: 'ar.json',
-        name: 'Arabic',
         dir: 'rtl',
       },
-    ], vueI18n: {
+    ],
+    vueI18n: {
       fallbackLocale: 'en',
-    }, defaultLocale: 'en',
+    },
+    detectBrowserLanguage: false,
   },
 
-
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {
-    // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: 'http://app.materiel.sa/api/v3/',
-    //prefix: '/api',
-    credentials: true
-  },
-
-  // PWA module configuration: https://go.nuxtjs.dev/pwa
-  pwa: {
-    manifest: {
-      lang: 'en',
+  gsap: {
+    extraPlugins: {
+      scrollTo: true,
+      scrollTrigger: true,
+    },
+    extraEases: {
+      expoScaleEase: true,
     },
   },
-
+  // Middleware
+  // serverMiddleware: [],
+  
   // Build Configuration: https://go.nuxtjs.dev/config-build
+  // devtools: true,
   build: {
-	  standalone: true,
+    postcss: {
+      plugins: {
+        autoprefixer: {},
+      },
+    },
+    loaders: {
+      sass: {
+        implementation: require('sass'),
+      },
+      scss: {
+        implementation: require('sass'),
+      },
+    },
   },
-//   app: {
-//     pageTransition: { name: 'page', mode: 'out-in' }
-// 	},
-//   hooks: {
-//     'generate:page': page => {
-//       page.html = page.html.replace(/ data-n-head=".*?"/gi, '').replace(/ data-hid=".*?"/gi, '')
-//     },
-//   },
+  publicRuntimeConfig: {
+    API_URL: process.env.API_URL,
+  },
 }
