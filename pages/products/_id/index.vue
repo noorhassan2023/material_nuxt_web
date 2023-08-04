@@ -98,9 +98,21 @@ import Product_API from '@/services/apis/product_api'
 import seoMeta from '@/services/seoMeta.js'
 
 export default {
-	 head: (app) => {
-		return  seoMeta.renderMeta('default',app?._i18n?.locale)
-  },
+
+	head: {
+		title: 'My title',
+		meta: [
+			{
+				hid: 'description',
+				name: 'description',
+				content: 'My description',
+			},
+		],
+	},
+	
+// 	 head: (app) => {
+// 		return  seoMeta.renderMeta('default',app?._i18n?.locale)
+//   },
 //   head() {
 //     return {
 //       title: "ddddddddddddddd",
@@ -146,6 +158,7 @@ export default {
     try {
       const productId = this.$route.params?.id
       const res = await Product_API.getProductDetail(productId)
+	   console.log('***********aaaaaaaaaaaaaaaa')
       console.log('***********', res)
       this.isExist = res.data.responseCode == 200 ? true : false
       if (this.isExist)
