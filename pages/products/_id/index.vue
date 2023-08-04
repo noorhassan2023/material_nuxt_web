@@ -8,8 +8,8 @@
     >
       <section class="section row-middle">
         <div class="container mb-5">
-			<p v-if="$fetchState.pending">Loading....</p>
-    <p v-else-if="$fetchState.error">Error while fetching mountains</p>
+          <p v-if="$fetchState.pending">Loading....</p>
+          <p v-else-if="$fetchState.error">Error while fetching mountains</p>
 
           <div class="row" v-else>
             <div class="col-md-4">
@@ -28,7 +28,7 @@
             >
               <h1 class="mb-4 product-color">
                 {{ singleProduct.vProductName }}
-                {{ singleProduct.vProductUnit }} 
+                {{ singleProduct.vProductUnit }}
               </h1>
               <h2 class="mb-4">
                 <s
@@ -93,46 +93,71 @@
   </div>
 </template>
 
-
-
 <script>
 import Product_API from '@/services/apis/product_api'
 
 export default {
-	 head() {
-	return {
-      title: this.singleProduct?.vProductName,
-	   meta: [
-                { hid: 'og:title', name : 'og:title',property: 'og:title', content: this.singleProduct?.vProductName },
-				{ hid: 'title', name : 'title', content: this.singleProduct?.vProductName },
-				{ hid: 'og:description', name : 'og:description', property: 'og:description',content: this.singleProduct?.txProductDescription },
-				{ hid: 'description', name : 'description', content: this.singleProduct?.txProductDescription },
-				{ hid: 'og:image', name : 'og:image', property: 'og:image',content: this.singleProduct?.vProductImage },
-                { hid: 'keywords', name: 'keywords', content: this.$t("meta.keywords") },
-            ],
-	}
-
+  head() {
+    return {
+      title: "ddddddddddddddd",
+      meta: [
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          property: 'og:title',
+          content: this.singleProduct?.vProductName,
+        },
+        {
+          hid: 'title',
+          name: 'title',
+          content: this.singleProduct?.vProductName,
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          property: 'og:description',
+          content: this.singleProduct?.txProductDescription,
+        },
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.singleProduct?.txProductDescription,
+        },
+        {
+          hid: 'og:image',
+          name: 'og:image',
+          property: 'og:image',
+          content: this.singleProduct?.vProductImage,
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: this.$t('meta.keywords'),
+        },
+      ],
+    }
   },
-	async fetch() {
-         // fetch data from API
-        try {
-		  const productId = this.$route.params?.id
-          const res = await Product_API.getProductDetail(productId)
-	     this.isExist = res.data.responseCode == 200 ? true : false
-			if (this.isExist)
-				this.singleProduct = res.data.responseData?.productDetails
-				this.$nuxt.$forceUpdate()
-				this.isLoaded = true
-        } catch (error) {
-            // Redirect to error page or 404 depending on server response
-      }
-    },	
+  async fetch() {
+    // fetch data from API
+    try {
+      const productId = this.$route.params?.id
+      const res = await Product_API.getProductDetail(productId)
+      console.log('***********', res.json())
+      this.isExist = res.data.responseCode == 200 ? true : false
+      if (this.isExist)
+        this.singleProduct = res.data.responseData?.productDetails
+      this.$nuxt.$forceUpdate()
+      this.isLoaded = true
+    } catch (error) {
+      // Redirect to error page or 404 depending on server response
+    }
+  },
   data() {
-	return {
-	  singleProduct: Object,
-	  isExist:false,
-	  isLoaded:false,
-	}
+    return {
+      singleProduct: Object,
+      isExist: false,
+      isLoaded: false,
+    }
   },
 }
 </script>
