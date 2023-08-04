@@ -79,14 +79,14 @@
               </div>
             </div>
           </div>
-          <div class="row" v-else>
+          <!-- <div class="row" v-else>
             <div class="col-md-6 offset-md-3 text-center">
               <h4>{{ $t('products.not_found') }}</h4>
               <NuxtLink :to="localePath('/products')" class="btn btn-primary">
                 {{ $t('products.go_to_products') }}
               </NuxtLink>
             </div>
-          </div>
+          </div> -->
         </div>
       </section>
     </b-overlay>
