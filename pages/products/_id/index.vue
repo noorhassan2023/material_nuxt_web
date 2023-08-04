@@ -127,7 +127,6 @@ export default {
             // Redirect to error page or 404 depending on server response
       }
     },	
-  fetchOnServer: false,
   data() {
 	return {
 	  singleProduct: Object,
