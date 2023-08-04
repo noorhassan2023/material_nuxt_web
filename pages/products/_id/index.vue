@@ -8,7 +8,10 @@
     >
       <section class="section row-middle">
         <div class="container mb-5">
-          <div class="row" v-if="isExist">
+			<p v-if="$fetchState.pending">Loading....</p>
+    <p v-else-if="$fetchState.error">Error while fetching mountains</p>
+
+          <div class="row" v-else>
             <div class="col-md-4">
               <img
                 :src="singleProduct.vProductImage"
@@ -124,7 +127,7 @@ export default {
             // Redirect to error page or 404 depending on server response
       }
     },	
-  
+  fetchOnServer: false,
   data() {
 	return {
 	  singleProduct: Object,
