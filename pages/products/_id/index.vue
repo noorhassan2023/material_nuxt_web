@@ -99,6 +99,7 @@ export default {
 	head: (app) => {
 		return  seoMeta.renderMeta('default',app?._i18n?.locale)
   },
+  fetchOnServer: true,
 // 	 head() {
 // 	return {
 //       title: this.singleProduct?.vProductName,
