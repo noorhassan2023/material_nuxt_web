@@ -155,12 +155,12 @@ export default {
   build: {
 	  standalone: true,
   },
-  app: {
-    pageTransition: { name: 'page', mode: 'out-in' }
-	},
-  hooks: {
-    'generate:page': page => {
-      page.html = page.html.replace(/ data-n-head=".*?"/gi, '').replace(/ data-hid=".*?"/gi, '')
-    },
-  },
+//   app: {
+//     pageTransition: { name: 'page', mode: 'out-in' }
+// 	},
+//   hooks: {
+//     'generate:page': page => {
+//       page.html = page.html.replace(/ data-n-head=".*?"/gi, '').replace(/ data-hid=".*?"/gi, '')
+//     },
+//   },
 }
