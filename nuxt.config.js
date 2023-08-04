@@ -76,10 +76,13 @@ export default {
     'bootstrap-vue/nuxt',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+	 '@nuxtjs/proxy',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     '@nuxtjs/i18n',
-    '@nuxtjs/toast',
+	  '@nuxtjs/toast',
+	
+	   ['cookie-universal-nuxt', { alias: 'cookiz' }],
   ],
 
   //vuetify object instance

@@ -11,7 +11,7 @@
           :key="item.id"
         >
           <div class=" shadow card-img doctor text-center">
-            <NuxtLink :to="localePath('/products/' + item.biProductId + '?' +messageWithoutSpaces(item.vProductName))" class=" card-a">
+            <NuxtLink :to="localePath('/products/' + item.biProductId + '?' +messageWithoutSpaces(item.vProductName))" class=" card-a" v-ripple>
               <div class="card-body doctor">
                 <img
                   :src="item.vProductImage"
