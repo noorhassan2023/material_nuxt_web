@@ -113,19 +113,19 @@ export default {
 // 	}
 
 //   },
-  async asyncData({ $axios ,params }) {
-	console.log("ffffffffffff");
-	// const productId = this.$route.params?.id
-    const singleProduct = await $axios.get(`https://app.materiel.sa/api/v3/product/product-details/${params.id}`,
-	   {
-			headers: {
-				'Authorization': 'Bearer 32996|lfezrmu2wOYHQWnLkgYc7SdLju2GJGKw3MfOjlG6',
-				'Lang': 'ar'
-			}
-		})
-      .then(res => res.data.responseData?.productDetails)//res.json())
-    return { singleProduct }
-  },
+//   async asyncData({ $axios ,params }) {
+// 	console.log("ffffffffffff");
+// 	// const productId = this.$route.params?.id
+//     const singleProduct = await $axios.get(`https://app.materiel.sa/api/v3/product/product-details/${params.id}`,
+// 	   {
+// 			headers: {
+// 				'Authorization': 'Bearer 32996|lfezrmu2wOYHQWnLkgYc7SdLju2GJGKw3MfOjlG6',
+// 				'Lang': 'ar'
+// 			}
+// 		})
+//       .then(res => res.data.responseData?.productDetails)//res.json())
+//     return { singleProduct }
+//   },
 	// async fetch() {
     //      // fetch data from API
     //     try {
@@ -141,6 +141,26 @@ export default {
     //   }
     // },	
   
+//    async asyncData ({ app, params }) {
+//     try {
+//       let { data } = await app.$axios.get(`/product/product-details/${params.id}`,
+// 	   {
+// 			headers: {
+// 				'Authorization': 'Bearer 32996|lfezrmu2wOYHQWnLkgYc7SdLju2GJGKw3MfOjlG6',
+// 				'Lang': 'ar'
+// 			}
+// 		})
+//       console.log('data arrived')
+//       return { user: data.data.responseData?.productDetails }
+//     } catch (e) {
+//       console.log(e)
+//     }
+//   },
+//   computed: {
+//     singleProduct () {
+//       return this.user
+//     }
+//   },
   data() {
 	return {
 	  singleProduct: Object,
