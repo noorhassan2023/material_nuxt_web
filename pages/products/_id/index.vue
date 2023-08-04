@@ -94,79 +94,42 @@
 
 <script>
 import Product_API from '@/services/apis/product_api'
-import seoMeta from '@/services/seoMeta.js'
-export default {
-	head: (app) => {
-		return  seoMeta.renderMeta('default',app?._i18n?.locale)
-  },
-  fetchOnServer: true,
-// 	 head() {
-// 	return {
-//       title: this.singleProduct?.vProductName,
-// 	   meta: [
-//                 { hid: 'og:title', name : 'og:title',property: 'og:title', content: this.singleProduct?.vProductName },
-// 				{ hid: 'title', name : 'title', content: this.singleProduct?.vProductName },
-// 				{ hid: 'og:description', name : 'og:description', property: 'og:description',content: this.singleProduct?.txProductDescription },
-// 				{ hid: 'description', name : 'description', content: this.singleProduct?.txProductDescription },
-// 				{ hid: 'og:image', name : 'og:image', property: 'og:image',content: this.singleProduct?.vProductImage },
-//                 { hid: 'keywords', name: 'keywords', content: this.$t("meta.keywords") },
-//             ],
-// 	}
 
-//   },
-//   async asyncData({ $axios ,params }) {
-// 	console.log("ffffffffffff");
-// 	// const productId = this.$route.params?.id
-//     const singleProduct = await $axios.get(`https://app.materiel.sa/api/v3/product/product-details/${params.id}`,
-// 	   {
-// 			headers: {
-// 				'Authorization': 'Bearer 32996|lfezrmu2wOYHQWnLkgYc7SdLju2GJGKw3MfOjlG6',
-// 				'Lang': 'ar'
-// 			}
-// 		})
-//       .then(res => res.data.responseData?.productDetails)//res.json())
-//     return { singleProduct }
-//   },
-	// async fetch() {
-    //      // fetch data from API
-    //     try {
-	// 	  const productId = this.$route.params?.id
-    //       const res = await Product_API.getProductDetail(productId)
-	//      this.isExist = res.data.responseCode == 200 ? true : false
-	// 		if (this.isExist)
-	// 			this.singleProduct = res.data.responseData?.productDetails
-	// 			this.$nuxt.$forceUpdate()
-	// 			this.isLoaded = true
-    //     } catch (error) {
-    //         // Redirect to error page or 404 depending on server response
-    //   }
-    // },	
+export default {
+	 head() {
+	return {
+      title: this.singleProduct?.vProductName,
+	   meta: [
+                { hid: 'og:title', name : 'og:title',property: 'og:title', content: this.singleProduct?.vProductName },
+				{ hid: 'title', name : 'title', content: this.singleProduct?.vProductName },
+				{ hid: 'og:description', name : 'og:description', property: 'og:description',content: this.singleProduct?.txProductDescription },
+				{ hid: 'description', name : 'description', content: this.singleProduct?.txProductDescription },
+				{ hid: 'og:image', name : 'og:image', property: 'og:image',content: this.singleProduct?.vProductImage },
+                { hid: 'keywords', name: 'keywords', content: this.$t("meta.keywords") },
+            ],
+	}
+
+  },
+	async fetch() {
+         // fetch data from API
+        try {
+		  const productId = this.$route.params?.id
+          const res = await Product_API.getProductDetail(productId)
+	     this.isExist = res.data.responseCode == 200 ? true : false
+			if (this.isExist)
+				this.singleProduct = res.data.responseData?.productDetails
+				this.$nuxt.$forceUpdate()
+				this.isLoaded = true
+        } catch (error) {
+            // Redirect to error page or 404 depending on server response
+      }
+    },	
   
-//    async asyncData ({ app, params }) {
-//     try {
-//       let { data } = await app.$axios.get(`/product/product-details/${params.id}`,
-// 	   {
-// 			headers: {
-// 				'Authorization': 'Bearer 32996|lfezrmu2wOYHQWnLkgYc7SdLju2GJGKw3MfOjlG6',
-// 				'Lang': 'ar'
-// 			}
-// 		})
-//       console.log('data arrived')
-//       return { user: data.data.responseData?.productDetails }
-//     } catch (e) {
-//       console.log(e)
-//     }
-//   },
-//   computed: {
-//     singleProduct () {
-//       return this.user
-//     }
-//   },
   data() {
 	return {
 	  singleProduct: Object,
-	  isExist:true,
-	  isLoaded:true,
+	  isExist:false,
+	  isLoaded:false,
 	}
   },
 }
