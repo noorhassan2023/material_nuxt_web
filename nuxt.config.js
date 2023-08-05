@@ -113,7 +113,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     // https://go.nuxtjs.dev/vuetify
-
+     'nuxt-gsap-module'
 
    // 'nuxt-gsap-module',
   ],
