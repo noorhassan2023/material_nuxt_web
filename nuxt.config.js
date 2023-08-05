@@ -161,6 +161,7 @@ export default {
 	  '@nuxtjs/toast',
 	
 	['cookie-universal-nuxt', { alias: 'cookiz' }],
+	['portal-vue/nuxt']
   ],
   
 
